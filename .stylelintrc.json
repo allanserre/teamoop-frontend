@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "unit-allowed-list": [
+      "%",
+      "deg",
+      "px",
+      "rem",
+      "ms",
+      "s"
+    ],
+    "no-empty-source": null
+  }
+}
