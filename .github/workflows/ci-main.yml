@@ -1,5 +1,5 @@
 
-name: Node.js CI Build and Deploy
+name: Test and Generate report
 
 env:
   NODE_VERSION : '22.8.0'
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: ${{env.NODE_VERSION}}
+        node-version: [${{env.NODE_VERSION}}]
 
     steps:
     - uses: actions/checkout@v4
