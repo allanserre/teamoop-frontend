@@ -64,12 +64,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
-          path: cypress/reports/screenshots
+          path: cypress/screenshots
           if-no-files-found: warn
 
       - name: Save Cypress Video Report
         uses: actions/upload-artifact@v4
         with:
           name: cypress-videos
-          path: cypress/reports/videos
+          path: cypress/videos
           if-no-files-found: warn
