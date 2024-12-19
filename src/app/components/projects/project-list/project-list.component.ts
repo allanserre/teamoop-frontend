@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-project-list',
@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './project-list.component.scss'
 })
 export class ProjectListComponent {
+
+  @Input() projects: { name: string; description: string; language: string; people: string[] }[] = [];
+
 
 }
