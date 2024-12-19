@@ -61,7 +61,7 @@ jobs:
       - name: Wait for Spring Boot to be ready
         run: |
           echo "Waiting for Spring Boot service to be ready..."
-          until curl -sf http://localhost:8080/actuator/health; do
+          until curl -sf http://localhost:8080/; do
             echo "Spring Boot service not ready yet..."
             sleep 5
           done
