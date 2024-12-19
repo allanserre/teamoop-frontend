@@ -57,8 +57,6 @@ jobs:
       - name: Run E2E test
         uses: cypress-io/github-action@v6
         with:
-          start: npm start
-          wait-on: 'http://localhost:4200'
           browser: chrome
           install: false
 
@@ -66,12 +64,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
-          path: cypress/screenshots
+          path: cypress/reports/screenshots
           if-no-files-found: ignore
 
       - name: Save Cypress Video Report
         uses: actions/upload-artifact@v4
         with:
           name: cypress-videos
-          path: cypress/videos
+          path: cypress/reports/videos
           if-no-files-found: ignore
