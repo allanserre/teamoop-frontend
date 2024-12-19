@@ -21,12 +21,14 @@ On installe les packages
 npm install
 ```
 
+Avoir le projet backend sur sa machine : https://github.com/LeNelSoN/teamoop-backend
+
 ## Serveur de développement
 
 Pour démarrer un serveur de développement local, exécutez :
 
 ```bash
-ng serve
+npm start
 ```
 
 Une fois le serveur lancé, ouvrez votre navigateur et accédez à `http://localhost:4200/`. L'application se rechargera automatiquement chaque fois que vous modifiez un fichier source.
