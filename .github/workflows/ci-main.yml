@@ -1,4 +1,4 @@
-name: Test and Generate report
+name: Build and Deploy images
 
 env:
   NODE_VERSION : '22.8.0'

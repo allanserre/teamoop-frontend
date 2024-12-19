@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { MainService } from '../../services/main.service';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  text = signal("");
 
+  constructor(private service: MainService) {
+    this.service.getHelloWorld().subscribe(res => {
+      this.text.set(res);
+    })
+  }
 }

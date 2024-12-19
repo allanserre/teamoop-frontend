@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  app:
+    image: ghcr.io/lenelson/teamoop-backend:latest
+    container_name: teamoop-backend
+    ports:
+      - 8080:8080
