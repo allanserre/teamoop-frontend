@@ -45,7 +45,7 @@ jobs:
     needs: lint
     services:
       springboot:
-        image: my-springboot-image:latest
+        image: ghcr.io/lenelson/teamoop-backend:latest
         ports:
           - 8080:8080
         options: >-
