@@ -40,7 +40,7 @@ jobs:
   cypress-e2e:
     name: Cypress Tests
     runs-on: ubuntu-24.04
-    needs: cypress-unit
+    needs: lint
 
     steps:
       - name: Checkout code
