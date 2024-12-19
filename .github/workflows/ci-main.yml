@@ -44,12 +44,12 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner }}/teamoop-backend:${{ env.IMAGE_TAG }} .
-        docker tag ghcr.io/${{ github.repository_owner  }}/teamoop-backend:${{ env.IMAGE_TAG }} ghcr.io/${{ github.repository_owner }}/teamoop-backend:latest
+        docker build -t ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ env.IMAGE_TAG }} .
+        docker tag ghcr.io/${{ github.repository_owner  }}/${{ github.event.repository.name }}:${{ env.IMAGE_TAG }} ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
 
     - name: Push Docker Image
       run: |
-        docker push ghcr.io/${{ github.repository_owner  }}/teamoop-backend:${{ env.IMAGE_TAG }}
+        docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ env.IMAGE_TAG }}
         docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
 
 
