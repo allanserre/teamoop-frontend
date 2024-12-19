@@ -5,7 +5,7 @@
     "ng": "ng serve --port 4200",
     "start": "ng serve",
     "build": "ng build",
-    "e2e": "npx cypress run --reporter mochawesome",
+    "e2e": "npx cypress run",
     "lint": "ng lint && stylelint \"src/**/*.{css,scss}\"",
     "lint:eslint": "ng lint",
     "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",

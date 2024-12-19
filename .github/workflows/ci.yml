@@ -60,16 +60,13 @@ jobs:
           browser: chrome
           install: false
 
-      - name: Save Cypress Screenshots Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-          if-no-files-found: warn
+      - name: Copy reports files
+        run:
+          cp -r cypress/videos mochawesome-report/videos
 
-      - name: Save Cypress Video Report
+      - name: Save Cypress Report
         uses: actions/upload-artifact@v4
         with:
-          name: cypress-videos
-          path: cypress/videos
+          name: cypress-report
+          path: mochawesome-report
           if-no-files-found: warn
