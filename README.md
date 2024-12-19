@@ -15,13 +15,17 @@ Vérifier la version de npm
 npm -v # devrais afficher `10.x.x`
 ```
 
-On installe les packages 
+Avoir le projet backend sur sa machine : https://github.com/LeNelSoN/teamoop-backend
+
+# Installation 
+
+On installe les packages :
 
 ```bash
 npm install
 ```
 
-Avoir le projet backend sur sa machine : https://github.com/LeNelSoN/teamoop-backend
+
 
 ## Serveur de développement
 
