@@ -6,12 +6,9 @@
     "teamoop-frontend": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "standalone": true,
-          "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
+        "@cypress/schematic:component": {
+          "style": "scss",
+          "standalone": true
         }
       },
       "root": "",
