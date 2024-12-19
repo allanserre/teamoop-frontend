@@ -51,16 +51,6 @@ Sous composants et composants réutilisable
 
 Représentation des différentes interface et classes utilisées
 
-## Construction
-
-Pour construire le projet, exécutez :
-
-```bash
-npm run build
-```
-
-Cela compilera votre projet et stockera les artefacts de construction dans le répertoire `dist/`. Par défaut, la construction pour la production optimise votre application pour la performance et la rapidité.
-
 ## Régles de code
 
 Le projet est basé sur Angular 19 ainsi :
@@ -70,7 +60,6 @@ Le projet est basé sur Angular 19 ainsi :
 - Utilisation du nouveau control flow @else @if etc
 - Utilisation des model Input input() output()
 - RxJS pour la gestion des requètes complexe asynchrone
-C
 
 ## Verification du code 
 
@@ -80,11 +69,19 @@ Vérification du code avec un EsLint et StyleLint
 npm run lint
 ```
 
-## Exécution des tests de bout en bout (end-to-end)
+## Exécution des tests
 
-Pour effectuer des tests End-To-End (e2e), exécutez :
+Le framework e2e choisis est Cypress
+
+Pour effectuer des tests End-To-End et de composants (e2e), exécutez :
 
 ```bash
 npm run e2e
 ```
-Le framework e2e choisis est Cypress
+
+Pour ouvrir cypress ef effectuer les tests en visuels :
+
+```bash
+npm run cypress:open
+```
+
