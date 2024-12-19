@@ -1,0 +1,72 @@
+name: Angular CI/CD Pipeline
+
+env:
+  NODE_VERSION : '22.8.0'
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  lint:
+    name: Linting (ESLint & Stylelint)
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{env.NODE_VERSION}}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint:eslint
+
+      - name: Run Stylelint
+        run: npm run lint:stylelint
+
+
+  cypress-e2e:
+    name: Cypress Tests
+    runs-on: ubuntu-24.04
+    needs: lint
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Component Testing
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm start
+          wait-on: 'http://localhost:4200'
+          browser: chrome
+          component: true
+
+      - name: Run E2E test
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          install: false
+
+      - name: Copy reports files
+        run:
+          cp -r cypress/videos mochawesome-report/videos
+
+      - name: Save Cypress Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-report
+          path: mochawesome-report
+          if-no-files-found: warn

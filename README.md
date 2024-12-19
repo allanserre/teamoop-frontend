@@ -1,59 +1,87 @@
-# TeamoopFrontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+# Teamoop Frontend
 
-## Development server
+# Prérequis 
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Installer la version 22 de node
 
 ```bash
-ng generate component component-name
+node -v # devrais afficher `v22.x.x`
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Vérifier la version de npm 
 
 ```bash
-ng generate --help
+npm -v # devrais afficher `10.x.x`
 ```
 
-## Building
-
-To build the project run:
+On installe les packages 
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Avoir le projet backend sur sa machine : https://github.com/LeNelSoN/teamoop-backend
 
-## Running unit tests
+## Serveur de développement
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Pour démarrer un serveur de développement local, exécutez :
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+Une fois le serveur lancé, ouvrez votre navigateur et accédez à `http://localhost:4200/`. L'application se rechargera automatiquement chaque fois que vous modifiez un fichier source.
 
-For end-to-end (e2e) testing, run:
+## Structure du projet 
+
+### Services
+
+Regroupe l'ensemble des services de l'application pour la communication avec l'API
+
+### Pages 
+
+Composant principaux ( page principale , login etc ... )
+
+### Components
+
+Sous composants et composants réutilisable 
+
+### Models
+
+Représentation des différentes interface et classes utilisées
+
+## Régles de code
+
+Le projet est basé sur Angular 19 ainsi :
+
+- Les composants sont en standalone 
+- Utilisation de l'API des signaux
+- Utilisation du nouveau control flow @else @if etc
+- Utilisation des model Input input() output()
+- RxJS pour la gestion des requètes complexe asynchrone
+
+## Verification du code 
+
+Vérification du code avec un EsLint et StyleLint
 
 ```bash
-ng e2e
+npm run lint
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Exécution des tests
 
-## Additional Resources
+Le framework e2e choisis est Cypress
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Pour effectuer des tests End-To-End et de composants (e2e), exécutez :
+
+```bash
+npm run e2e
+```
+
+Pour ouvrir cypress ef effectuer les tests en visuels :
+
+```bash
+npm run cypress:open
+```
+
