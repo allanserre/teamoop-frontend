@@ -4,10 +4,6 @@ env:
   NODE_VERSION : '22.8.0'
 
 on:
-  push:
-    branches:
-      - main
-      - dev
   pull_request:
     types:
       - opened
