@@ -31,6 +31,8 @@ module.exports = tseslint.config(
         },
       ],
       "no-empty-function": "off",
+      // A modifier une fois que les tests pourront fonctionner sans "any"
+      "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-empty-function": "off",
     },
   },

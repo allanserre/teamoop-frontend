@@ -4,10 +4,6 @@ env:
   NODE_VERSION : '22.8.0'
 
 on:
-  push:
-    branches:
-      - main
-      - dev
   pull_request:
     types:
       - opened
@@ -48,11 +44,6 @@ jobs:
         image: ghcr.io/lenelson/teamoop-backend:latest
         ports:
           - 8080:8080
-        options: >-
-          --health-cmd="curl -f http://localhost:8080 || exit 1"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
 
     steps:
       - name: Checkout code
@@ -61,7 +52,7 @@ jobs:
       - name: Wait for Spring Boot to be ready
         run: |
           echo "Waiting for Spring Boot service to be ready..."
-          until curl -sf http://localhost:8080/; do
+          until curl -sf http://localhost:8080/actuator/health ; do
             echo "Spring Boot service not ready yet..."
             sleep 5
           done
