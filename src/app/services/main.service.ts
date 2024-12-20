@@ -12,6 +12,6 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
   getHelloWorld() {
-    return this.http.get<string>(`${this.apiUrl}/`);
+    return this.http.get(`${this.apiUrl}/api/hello`, { responseType: 'text' });
   }
 }

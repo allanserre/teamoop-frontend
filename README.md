@@ -1,91 +1,125 @@
+# Teamoop: Collaborative Project Platform
 
-# Teamoop Frontend
+## Introduction
 
-# Prérequis 
+Teamoop is a platform designed to foster learning and collaboration through project-based activities. The application provides the possibility for users to publish, join, and manage projects. Teamoop caters to developers, learners, and project managers looking to work together effectively on diverse initiatives.
 
-Installer la version 22 de node
+This document provides a comprehensive guide to setting up, running, and contributing to the Teamoop platform. Whether you are a developer, contributor, or end user, this README will help you get started.
 
-```bash
-node -v # devrais afficher `v22.x.x`
-```
+# Prerequisites
 
-Vérifier la version de npm 
+Before starting, ensure you have the following installed:
 
-```bash
-npm -v # devrais afficher `10.x.x`
-```
+- **Node.js Version 22**  
+  Verify the version of Node.js by running:
 
-Avoir le projet backend sur sa machine : https://github.com/LeNelSoN/teamoop-backend
+  ```bash
+  node -v # should display `v22.x.x`
+  ```
 
-# Installation 
+- **npm Version 10.x.x**  
+  Check the npm version with:
 
-On installe les packages :
+  ```bash
+  npm -v # should display `10.x.x`
+  ```
+
+- **Docker and Docker Compose**  
+  Ensure you have Docker and Docker Compose installed. You can verify by running:
+
+  ```bash
+  docker -v # should display the Docker version
+  docker-compose -v # should display the Docker Compose version
+  ```
+
+# Installation
+
+Install the required dependencies by running:
 
 ```bash
 npm install
 ```
 
+## Development Server
 
-
-## Serveur de développement
-
-Pour démarrer un serveur de développement local, exécutez :
+To start a local development server, run:
 
 ```bash
 npm start
 ```
 
-Une fois le serveur lancé, ouvrez votre navigateur et accédez à `http://localhost:4200/`. L'application se rechargera automatiquement chaque fois que vous modifiez un fichier source.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you make changes to a source file.
 
-## Structure du projet 
+## Starting the API
 
-### Services
-
-Regroupe l'ensemble des services de l'application pour la communication avec l'API
-
-### Pages 
-
-Composant principaux ( page principale , login etc ... )
-
-### Components
-
-Sous composants et composants réutilisable 
-
-### Models
-
-Représentation des différentes interface et classes utilisées
-
-## Régles de code
-
-Le projet est basé sur Angular 19 ainsi :
-
-- Les composants sont en standalone 
-- Utilisation de l'API des signaux
-- Utilisation du nouveau control flow @else @if etc
-- Utilisation des model Input input() output()
-- RxJS pour la gestion des requètes complexe asynchrone
-
-## Verification du code 
-
-Vérification du code avec un EsLint et StyleLint
+To launch the backend API, ensure you have Docker and Docker Compose installed, then run:
 
 ```bash
-npm run lint
+docker-compose up
 ```
 
-## Exécution des tests
+This will start the API service as defined in the `docker-compose.yml` file of the backend project.
 
-Le framework e2e choisis est Cypress
+## Project Structure
 
-Pour effectuer des tests End-To-End et de composants (e2e), exécutez :
+### `services/`
+
+Contains all the services used for communication with the backend API.
+
+### `pages/`
+
+Holds the main application components (e.g., main page, login, etc.).
+
+### `components/`
+
+Includes subcomponents and reusable components.
+
+### `models/`
+
+Defines the interfaces and classes used throughout the application.
+
+## Coding Guidelines
+
+This project is built with Angular 19 and follows these practices:
+
+- **Standalone Components**: All components are standalone.
+- **Signals API**: Utilized for state management.
+- **Enhanced Control Flow**: Makes use of `@if` and `@else` directives.
+- **Input and Output Models**: Employs `@Input()` and `@Output()` bindings.
+- **RxJS**: Used for managing complex asynchronous requests.
+
+## Code Verification
+
+Ensure code quality by running linters:
+
+- **StyleLint** for CSS/SCSS code
+- **ESLint** for JavaScript/TypeScript code:
+  ```bash
+  npm run lint
+  ```
+
+
+
+## Running Tests
+
+This project uses **Cypress** for End-to-End (e2e) and component testing.
+
+### Run Tests
+
+To execute the tests, run:
 
 ```bash
 npm run e2e
 ```
 
-Pour ouvrir cypress ef effectuer les tests en visuels :
+### Cypress Test Runner
+
+To visually execute and debug tests using the Cypress Test Runner, run:
 
 ```bash
 npm run cypress:open
 ```
+
+---
+
 
