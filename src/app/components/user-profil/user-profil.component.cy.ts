@@ -1,4 +1,3 @@
-import { signal } from '@angular/core';
 import { User } from '../../models/user.model';
 import { UserProfilComponent } from './user-profil.component'
 
@@ -18,8 +17,7 @@ describe('UserProfilComponent', () => {
     cy.mount(UserProfilComponent,
       {
         componentProperties: {
-          // Voir comment typer pour le test des signaux
-          user: signal(user) as any
+          user: user
         },
       });
 
