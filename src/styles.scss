@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+@include mat.core();
+@import "styles/font";
+@import "styles/variable";
+@import "styles/custom-theme";
+
+$teamoop-typography: mat.define-typography()
+$teamoop-light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: $primary-palette,
+    accent: $secondary-palette,
+    warn: $tertiary-palette,
+  ),
+  typography: Montserra,
+  density: (
+    scale: 0,
+  )
+));
+
+:root {
+  @include mat.all-component-themes($teamoop-light-theme);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: $font-family; font-weight: $font-weight }
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 900;
+}
