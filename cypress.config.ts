@@ -21,7 +21,8 @@ export default defineConfig({
       bundler: 'webpack',
     },
     specPattern: '**/*.cy.ts',
-
+    viewportWidth: 500,
+    viewportHeight: 500,
   }
 
 })

@@ -5,13 +5,14 @@
     "ng": "ng serve --port 4200",
     "start": "ng serve",
     "build": "ng build",
-    "e2e": "npx cypress run",
+    "e2e": "npm run build:variables && npx cypress run",
     "lint": "ng lint && stylelint \"src/**/*.{css,scss}\"",
     "lint:eslint": "ng lint",
     "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "watch": "ng build --watch --configuration development",
     "cypress:open": "npx cypress open",
-    "cypress:run": "npx cypress run"
+    "cypress:run": "npx cypress run",
+    "build:variables": "sass --no-source-map src/styles/variables.scss temp/variables.css && node scripts/convert-css-to-json.js"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
     "@schematics/angular": "^18.0.6",
+    "cypress-real-events": "^1.13.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

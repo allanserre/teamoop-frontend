@@ -98,8 +98,6 @@ Ensure code quality by running linters:
   npm run lint
   ```
 
-
-
 ## Running Tests
 
 This project uses **Cypress** for End-to-End (e2e) and component testing.
@@ -111,6 +109,56 @@ To execute the tests, run:
 ```bash
 npm run e2e
 ```
+
+## Writing Component Tests
+
+To create a test for a specific Angular component, generate a `*.component.cy.ts` file in the same directory as the component. These files are automatically generated when you create a new component using the following command:
+
+```bash
+ng g c components/example-component
+```
+
+### Structure of Component Tests
+
+Component tests are organized into the following categories:
+
+- **Input Tests**: Validate the behavior of the component when different inputs are provided.
+- **Output Tests**: Verify that the component emits the expected outputs.
+- **Component Class Build Tests**: Ensure that the component class initializes correctly.
+- **Component Template Build Tests**: Check that the component template is rendered properly.
+- **Visual Tests**: Perform dynamic visual checks to validate styles and appearance.
+
+### Required Imports
+
+Include the following imports in your component test files:
+
+```typescript
+// Ensure you import the signals library, not the default Angular one.
+import { createOutputSpy } from 'cypress/angular-signals';
+
+// Import the variables JSON file to enable dynamic visual testing.
+import variables from '../cypress/variables.json';
+
+// Used to simulate real events, such as hover effects.
+import "cypress-real-events";
+```
+
+### Managing SCSS Variables for Visual Tests
+
+The `variables.json` file contains all the SCSS variables from your project's `variables.scss` file. To maintain consistency between SCSS and Cypress tests:
+
+1. Add any new SCSS the `variables.scss` file.
+2. Include these variables in the `:root` section of your CSS to ensure accessibility for dynamic testing.
+
+### Updating the Variables JSON File
+
+Whenever you update the `variables.scss` file, ensure you regenerate the corresponding JSON file by running:
+
+```bash
+npm run build:variables
+```
+
+This ensures that your Cypress component tests always have access to the latest styles and variables.
 
 ### Cypress Test Runner
 
