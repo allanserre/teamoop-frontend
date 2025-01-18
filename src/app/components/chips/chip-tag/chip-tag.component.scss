@@ -15,18 +15,22 @@ $chip-opacity: 0.16;
     background-color: rgba(theme.get-color(red, 500),$chip-opacity);
     color: theme.get-color(red, 500);
   }
+
   &.blue {
     background-color: rgba(theme.get-color(primary, 500),$chip-opacity);
     color: theme.get-color(primary, 500);
   }
+
   &.light-blue {
     background-color: rgba(theme.get-color(gray, 500),$chip-opacity);
     color: theme.get-color(gray, 500);
   }
+
   &.green {
     background-color: rgba(theme.get-color(green, 500),$chip-opacity);
     color: theme.get-color(green, 500);
   }
+
   &.orange {
     background-color: rgba(theme.get-color(orange, 500),$chip-opacity);
     color: theme.get-color(orange, 500);

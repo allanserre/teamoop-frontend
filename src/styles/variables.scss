@@ -2,9 +2,9 @@
 
 $font-family: 'Montserrat', sans-serif;
 $font-weight: 400;
-$outline-color : rgba(theme.get-color(primary,950),0.25);
-$hover-color : rgba(theme.get-color(primary,950),0.15);
-$text-color : theme.get-color(dark,500);
+$outline-color: rgba(theme.get-color(primary,950),0.25);
+$hover-color: rgba(theme.get-color(primary,950),0.15);
+$text-color: theme.get-color(dark,500);
 
 :root {
   --font-family: #{$font-family};

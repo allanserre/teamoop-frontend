@@ -1,9 +1,9 @@
-@use '@angular/material' as mat;
-@use 'styles/theme' as theme;
-
-@include mat.core();
 @import "styles/font";
 @import "styles/variables";
+@use '@angular/material' as mat;
+@use 'styles/theme' as theme;
+@include mat.core;
+
 
 // Define the theme object.
 $teamoop-frontend-theme: mat.define-theme((
@@ -28,6 +28,7 @@ $teamoop-frontend-theme: mat.define-theme((
 html, body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: $font-family;
