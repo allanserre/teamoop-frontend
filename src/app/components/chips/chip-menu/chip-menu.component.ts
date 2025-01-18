@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {booleanAttribute, Component, input} from '@angular/core';
 
 @Component({
   selector: 'app-chip-menu',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './chip-menu.component.scss'
 })
 export class ChipMenuComponent {
-
+  active = input(false, {transform: booleanAttribute});
 }

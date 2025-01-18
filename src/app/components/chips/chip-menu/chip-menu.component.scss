@@ -1,0 +1,22 @@
+@use 'theme' as theme;
+
+.chip-menu {
+  background-color: theme.get-color(primary,50);
+  color: theme.get-color(dark,500);
+  padding: 12px 18px;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &.active {
+    background-color: theme.get-color(primary,300);
+  }
+
+  &:hover:not(.active) {
+    background-color: theme.get-color(gray,500);
+  }
+}

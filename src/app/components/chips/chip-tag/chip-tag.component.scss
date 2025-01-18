@@ -1,25 +1,34 @@
+@use 'theme' as theme;
+
+$chip-opacity: 0.16;
+
 .chip-tag {
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 11px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: default;
 
   &.red {
-    background-color: rgba(192, 72, 74, 0.16);
+    background-color: rgba(theme.get-color(red, 500),$chip-opacity);
+    color: theme.get-color(red, 500);
   }
   &.blue {
-    background-color: rgba(88, 164, 176, 0.16);
+    background-color: rgba(theme.get-color(primary, 500),$chip-opacity);
+    color: theme.get-color(primary, 500);
   }
   &.light-blue {
-    background-color: rgba(21, 212, 243, 0.16);
+    background-color: rgba(theme.get-color(gray, 500),$chip-opacity);
+    color: theme.get-color(gray, 500);
   }
   &.green {
-    background-color: rgba(142, 174, 90, 0.16);
+    background-color: rgba(theme.get-color(green, 500),$chip-opacity);
+    color: theme.get-color(green, 500);
   }
   &.orange {
-    background-color: rgba(206, 132, 58, 0.16);
+    background-color: rgba(theme.get-color(orange, 500),$chip-opacity);
+    color: theme.get-color(orange, 500);
   }
 }
