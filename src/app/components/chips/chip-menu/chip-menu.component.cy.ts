@@ -2,7 +2,6 @@ import { ChipMenuComponent } from './chip-menu.component'
 import variables from '../../../../../cypress/variables.json';
 import "cypress-real-events";
 
-
 describe('ChipMenuComponent', () => {
   it('should mount', () => {
     cy.mount(ChipMenuComponent);
