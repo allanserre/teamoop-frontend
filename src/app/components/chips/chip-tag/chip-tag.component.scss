@@ -1,6 +1,5 @@
 @use 'theme' as theme;
-
-$chip-opacity: 0.16;
+@import "../../../../styles/variables";
 
 .chip-tag {
   padding: 4px 8px;
@@ -12,27 +11,27 @@ $chip-opacity: 0.16;
   cursor: default;
 
   &.red {
-    background-color: rgba(theme.get-color(red, 500),$chip-opacity);
-    color: theme.get-color(red, 500);
+    background-color: $chip-tag-red-background;
+    color: $chip-tag-red-color;
   }
 
   &.blue {
-    background-color: rgba(theme.get-color(primary, 500),$chip-opacity);
-    color: theme.get-color(primary, 500);
+    background-color: $chip-tag-blue-background;
+    color: $chip-tag-blue-color;
   }
 
   &.light-blue {
-    background-color: rgba(theme.get-color(gray, 500),$chip-opacity);
-    color: theme.get-color(gray, 500);
+    background-color: $chip-tag-light-blue-background;
+    color: $chip-tag-light-blue-color;
   }
 
   &.green {
-    background-color: rgba(theme.get-color(green, 500),$chip-opacity);
-    color: theme.get-color(green, 500);
+    background-color: $chip-tag-green-background;
+    color: $chip-tag-green-color;
   }
 
   &.orange {
-    background-color: rgba(theme.get-color(orange, 500),$chip-opacity);
-    color: theme.get-color(orange, 500);
+    background-color: $chip-tag-orange-background;
+    color: $chip-tag-orange-color;
   }
 }

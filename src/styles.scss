@@ -1,7 +1,7 @@
-@import "styles/font";
-@import "styles/variables";
 @use '@angular/material' as mat;
 @use 'styles/theme' as theme;
+@import "styles/font";
+@import "styles/variables";
 @include mat.core;
 
 
@@ -34,7 +34,7 @@ body {
   font-family: $font-family;
   font-weight: $font-weight;
   color: theme.get-color(dark,500);
-  background: theme.get-color(primary,50);
+  background: $background-surface-color;
 }
 
 button {

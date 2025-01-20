@@ -3,7 +3,6 @@ import { MainService } from '../../services/main.service';
 import {ChipMenuComponent} from '../../components/chips/chip-menu/chip-menu.component';
 import {ChipTagComponent} from '../../components/chips/chip-tag/chip-tag.component';
 import {ChipInputComponent} from '../../components/chips/chip-input/chip-input.component';
-import {ChipAssistComponent} from '../../components/chips/chip-assist/chip-assist.component';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +10,6 @@ import {ChipAssistComponent} from '../../components/chips/chip-assist/chip-assis
     ChipMenuComponent,
     ChipTagComponent,
     ChipInputComponent,
-    ChipAssistComponent,
     ChipInputComponent
   ],
   standalone: true,

@@ -5,14 +5,15 @@
     "ng": "ng serve --port 4200",
     "start": "ng serve",
     "build": "ng build",
-    "e2e": "npm run build:variables && npx cypress run",
+    "test": "npm run build:variables && npx cypress run --component && npx cypress run --e2e",
     "lint": "ng lint && stylelint \"src/**/*.{css,scss}\"",
+    "lint:fix": "stylelint \"src/**/*.{css,scss}\" --fix && ng lint --fix",
     "lint:eslint": "ng lint",
     "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "watch": "ng build --watch --configuration development",
     "cypress:open": "npx cypress open",
     "cypress:run": "npx cypress run",
-    "build:variables": "sass --no-source-map src/styles/variables.scss temp/variables.css && node scripts/convert-css-to-json.js"
+    "build:variables": "node scripts/add-missing-variables-scss.js && sass --no-source-map src/styles/variables.scss temp/variables.css && node scripts/convert-css-to-json.js"
   },
   "private": true,
   "dependencies": {
@@ -39,7 +40,7 @@
     "@cypress/schematic": "^2.5.2",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "18.4.3",
-    "cypress": "latest",
+    "cypress": "^14.0.0",
     "eslint": "^9.16.0",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",

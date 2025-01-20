@@ -16,7 +16,7 @@ describe('ChipInputComponent', () => {
       imports: [ChipInputComponent]
     })
 
-    cy.get("span").should('have.text', '#filter')
+    cy.get('[data-cy="chip-text"]').should('have.text', '#filter')
   })
 
   it('can mount using template syntax with content projection', () => {
@@ -25,7 +25,7 @@ describe('ChipInputComponent', () => {
       imports: [ChipInputComponent]
     })
 
-    cy.get("span").should('have.text', chipText);
+    cy.get('[data-cy="chip-text"]').should('have.text', chipText);
   })
 
   it('should trigger a chipClosed event when clicking on the right icon', () => {
@@ -35,16 +35,17 @@ describe('ChipInputComponent', () => {
       }
     })
 
-    cy.get('.icon-backdrop').click()
+    cy.get('[data-cy="close"]').click()
     cy.get('@chipClosedSpy').should('have.been.calledOnce');
   })
 
-  // Test des styles
+  // Styles Test
 
   it('should apply hover styles to the close button', () => {
     cy.mount(ChipInputComponent)
 
-    const icon = cy.get('.chip-filter .icon-backdrop')
-    icon.realHover().should('have.css', 'background-color', variables['hover-color']);
+    cy.get('.icon-backdrop')
+      .realHover()
+      .should('have.css', 'background-color', variables['hover-color']);
   });
 })

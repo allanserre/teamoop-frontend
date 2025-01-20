@@ -104,11 +104,25 @@ This project uses **Cypress** for End-to-End (e2e) and component testing.
 
 ### Run Tests
 
-To execute the tests, run:
+Start docker first :
+
+```bash
+docker compose up -d
+```
+
+Start the Angular server :
+
+```bash
+npm run start
+```
+
+Then execute the tests, run:
 
 ```bash
 npm run e2e
 ```
+
+
 
 ## Writing Component Tests
 
@@ -148,7 +162,7 @@ import "cypress-real-events";
 The `variables.json` file contains all the SCSS variables from your project's `variables.scss` file. To maintain consistency between SCSS and Cypress tests:
 
 1. Add any new SCSS the `variables.scss` file.
-2. Include these variables in the `:root` section of your CSS to ensure accessibility for dynamic testing.
+2. Don't include these variables in the `:root` section the script is doing it for you.
 
 ### Updating the Variables JSON File
 

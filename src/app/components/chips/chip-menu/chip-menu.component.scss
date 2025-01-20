@@ -1,7 +1,8 @@
 @use 'theme' as theme;
+@import "../../../../styles/variables";
 
 .chip-menu {
-  background-color: theme.get-color(primary,50);
+  background-color: $background-surface-color;
   color: theme.get-color(dark,500);
   padding: 12px 18px;
   border-radius: 9999px;
@@ -13,10 +14,10 @@
   cursor: pointer;
 
   &.active {
-    background-color: theme.get-color(primary,300);
+    background-color: $chip-menu-active-color;
   }
 
   &:hover:not(.active) {
-    background-color: theme.get-color(gray,500);
+    background-color: $chip-menu-hover-color;
   }
 }

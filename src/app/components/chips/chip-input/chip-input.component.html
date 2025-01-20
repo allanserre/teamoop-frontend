@@ -1,8 +1,8 @@
 <div class="chip-filter">
-  <span>
+  <span data-cy="chip-text">
       <ng-content>#filter</ng-content>
   </span>
-  <button class="icon-backdrop" (click)="chipClosed.emit()">
+  <button data-cy="close" class="icon-backdrop" (click)="chipClosed.emit()">
     <mat-icon>close</mat-icon>
   </button>
 </div>
