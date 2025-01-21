@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
-@use 'styles/theme' as theme;
-@import "styles/font";
-@import "styles/variables";
+@use 'theme' as theme;
+@import "font";
+@import "variables";
 @include mat.core;
 
 

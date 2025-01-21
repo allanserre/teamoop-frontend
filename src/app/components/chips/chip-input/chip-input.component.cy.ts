@@ -1,6 +1,6 @@
 import { ChipInputComponent } from './chip-input.component'
 import {createOutputSpy} from 'cypress/angular';
-import variables from '../../../../../cypress/variables.json';
+import variables from 'cypress/variables.json';
 import "cypress-real-events";
 
 describe('ChipInputComponent', () => {

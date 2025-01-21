@@ -1,5 +1,5 @@
 @use 'theme' as theme;
-@import "../../../../styles/variables";
+@import "variables";
 
 .chip-filter {
   background-color: theme.get-color(primary,50);

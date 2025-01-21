@@ -1,6 +1,6 @@
 import {ChipTagColor, ChipTagComponent} from './chip-tag.component'
 import {signal} from '@angular/core';
-import variables from '../../../../../cypress/variables.json';
+import variables from 'cypress/variables.json';
 
 describe('ChipTagComponent', () => {
   it('should mount', () => {
