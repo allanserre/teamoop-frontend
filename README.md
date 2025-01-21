@@ -1,187 +1,177 @@
-# Teamoop: Collaborative Project Platform
+# Teamoop : Plateforme de Projet Collaboratif
 
 ## Introduction
 
-Teamoop is a platform designed to foster learning and collaboration through project-based activities. The application provides the possibility for users to publish, join, and manage projects. Teamoop caters to developers, learners, and project managers looking to work together effectively on diverse initiatives.
+Teamoop est une plateforme conçue pour favoriser l'apprentissage et la collaboration à travers des activités basées sur des projets. L'application permet aux utilisateurs de publier, rejoindre et gérer des projets. Teamoop s'adresse aux développeurs, aux apprenants et aux chefs de projet souhaitant collaborer efficacement sur diverses initiatives.
 
-This document provides a comprehensive guide to setting up, running, and contributing to the Teamoop platform. Whether you are a developer, contributor, or end user, this README will help you get started.
+Ce document fournit un guide complet pour installer, exécuter et contribuer à la plateforme Teamoop. Que vous soyez développeur, contributeur ou utilisateur final, ce README vous aidera à démarrer.
 
-# Prerequisites
+# Prérequis
 
-Before starting, ensure you have the following installed:
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
-- **Node.js Version 22**  
-  Verify the version of Node.js by running:
+- **Node.js version 22**  
+  Vérifiez la version de Node.js en exécutant :
 
   ```bash
-  node -v # should display `v22.x.x`
+  node -v # devrait afficher `v22.x.x`
   ```
 
-- **npm Version 10.x.x**  
-  Check the npm version with:
+- **npm version 10.x.x**  
+  Vérifiez la version de npm avec :
 
   ```bash
-  npm -v # should display `10.x.x`
+  npm -v # devrait afficher `10.x.x`
   ```
 
-- **Docker and Docker Compose**  
-  Ensure you have Docker and Docker Compose installed. You can verify by running:
+- **Docker et Docker Compose**  
+  Assurez-vous que Docker et Docker Compose sont installés. Vous pouvez vérifier en exécutant :
 
   ```bash
-  docker -v # should display the Docker version
-  docker-compose -v # should display the Docker Compose version
+  docker -v # devrait afficher la version de Docker
+  docker-compose -v # devrait afficher la version de Docker Compose
   ```
 
 # Installation
 
-Install the required dependencies by running:
+Installez les dépendances requises en exécutant :
 
 ```bash
 npm install
 ```
 
-## Development Server
+## Serveur de développement
 
-To start a local development server, run:
+Pour démarrer un serveur de développement local, exécutez :
 
 ```bash
 npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you make changes to a source file.
+Une fois le serveur lancé, ouvrez votre navigateur et accédez à `http://localhost:4200/`. L'application se rechargera automatiquement chaque fois que vous modifierez un fichier source.
 
-## Starting the API
+## Démarrer l'API
 
-To launch the backend API, ensure you have Docker and Docker Compose installed, then run:
+Pour lancer l'API backend, assurez-vous d'avoir Docker et Docker Compose installés, puis exécutez :
 
 ```bash
 docker-compose up
 ```
 
-This will start the API service as defined in the `docker-compose.yml` file of the backend project.
+Cela démarrera le service API défini dans le fichier `docker-compose.yml` du projet backend.
 
-## Project Structure
+## Structure du projet
 
 ### `services/`
 
-Contains all the services used for communication with the backend API.
+Contient tous les services utilisés pour la communication avec l'API backend.
 
 ### `pages/`
 
-Holds the main application components (e.g., main page, login, etc.).
+Contient les composants principaux de l'application (ex. page principale, connexion, etc.).
 
 ### `components/`
 
-Includes subcomponents and reusable components.
+Inclut les sous-composants et les composants réutilisables.
 
 ### `models/`
 
-Defines the interfaces and classes used throughout the application.
+Définit les interfaces et classes utilisées dans toute l'application.
 
-## Coding Guidelines
+## Directives de codage
 
-This project is built with Angular 19 and follows these practices:
+Ce projet est construit avec Angular 19 et suit les pratiques suivantes :
 
-- **Standalone Components**: All components are standalone.
-- **Signals API**: Utilized for state management.
-- **Enhanced Control Flow**: Makes use of `@if` and `@else` directives.
-- **Input and Output Models**: Employs `@Input()` and `@Output()` bindings.
-- **RxJS**: Used for managing complex asynchronous requests.
+- **Composants autonomes (Standalone Components)** : Tous les composants sont autonomes.
+- **API Signals** : Utilisée pour la gestion d'état.
+- **Contrôle de flux amélioré** : Utilisation des directives `@if` et `@else`.
+- **Modèles d'entrée et de sortie** : Utilisation des décorateurs `@Input()` et `@Output()`.
+- **RxJS** : Utilisé pour gérer des requêtes asynchrones complexes.
 
-## Code Verification
+## Vérification du code
 
-Ensure code quality by running linters:
+Assurez-vous de la qualité du code en exécutant les outils d'analyse statique :
 
-- **StyleLint** for CSS/SCSS code
-- **ESLint** for JavaScript/TypeScript code:
+- **StyleLint** pour le code CSS/SCSS
+- **ESLint** pour le code JavaScript/TypeScript :
   ```bash
   npm run lint
   ```
 
-## Running Tests
+## Exécution des tests
 
-This project uses **Cypress** for End-to-End (e2e) and component testing.
+Ce projet utilise **Cypress** pour les tests End-to-End (e2e) et les tests de composants.
 
-### Run Tests
+### Lancer les tests
 
-Start docker first :
+Démarrez d'abord Docker :
 
 ```bash
 docker compose up -d
 ```
 
-Start the Angular server :
+Démarrez ensuite le serveur Angular :
 
 ```bash
 npm run start
 ```
 
-Then execute the tests, run:
+Puis exécutez les tests avec :
 
 ```bash
 npm run e2e
 ```
 
+## Écriture des tests de composants
 
-
-## Writing Component Tests
-
-To create a test for a specific Angular component, generate a `*.component.cy.ts` file in the same directory as the component. These files are automatically generated when you create a new component using the following command:
+Pour créer un test pour un composant Angular spécifique, générez un fichier `*.component.cy.ts` dans le même répertoire que le composant. Ces fichiers sont automatiquement générés lorsque vous créez un nouveau composant via la commande suivante :
 
 ```bash
 ng g c components/example-component
 ```
 
-### Structure of Component Tests
+### Structure des tests de composants
 
-Component tests are organized into the following categories:
+Les tests de composants sont organisés selon les catégories suivantes :
 
-- **Input Tests**: Validate the behavior of the component when different inputs are provided.
-- **Output Tests**: Verify that the component emits the expected outputs.
-- **Component Class Build Tests**: Ensure that the component class initializes correctly.
-- **Component Template Build Tests**: Check that the component template is rendered properly.
-- **Visual Tests**: Perform dynamic visual checks to validate styles and appearance.
+- **Tests d'entrée (Input Tests)** : Validation du comportement du composant avec différentes entrées.
+- **Tests de sortie (Output Tests)** : Vérification des événements émis par le composant.
+- **Tests de construction de la classe du composant** : Assurent que la classe du composant est bien initialisée.
+- **Tests de construction du template** : Vérifient que le template est correctement rendu.
+- **Tests visuels** : Valident dynamiquement les styles et l'apparence.
 
-### Required Imports
+### Imports requis
 
-Include the following imports in your component test files:
+Incluez les imports suivants dans vos fichiers de test de composant :
 
 ```typescript
-// Ensure you import the signals library, not the default Angular one.
 import { createOutputSpy } from 'cypress/angular-signals';
-
-// Import the variables JSON file to enable dynamic visual testing.
 import variables from '../cypress/variables.json';
-
-// Used to simulate real events, such as hover effects.
 import "cypress-real-events";
 ```
 
-### Managing SCSS Variables for Visual Tests
+### Gestion des variables SCSS pour les tests visuels
 
-The `variables.json` file contains all the SCSS variables from your project's `variables.scss` file. To maintain consistency between SCSS and Cypress tests:
+Le fichier `variables.json` contient toutes les variables SCSS extraites du fichier `variables.scss` de votre projet. Pour maintenir la cohérence entre SCSS et les tests Cypress :
 
-1. Add any new SCSS the `variables.scss` file.
-2. Don't include these variables in the `:root` section the script is doing it for you.
+1. Ajoutez toutes nouvelles variables dans `variables.scss`.
+2. Ne les incluez pas manuellement dans `:root`, le script s'en charge automatiquement.
 
-### Updating the Variables JSON File
+### Mise à jour du fichier JSON des variables
 
-Whenever you update the `variables.scss` file, ensure you regenerate the corresponding JSON file by running:
+Lorsque vous modifiez le fichier `variables.scss`, regénérez le fichier JSON correspondant en exécutant :
 
 ```bash
 npm run build:variables
 ```
 
-This ensures that your Cypress component tests always have access to the latest styles and variables.
+Cela garantit que vos tests Cypress accèdent toujours aux derniers styles et variables.
 
-### Cypress Test Runner
+### Exécution des tests visuels Cypress
 
-To visually execute and debug tests using the Cypress Test Runner, run:
+Pour exécuter et déboguer visuellement les tests avec Cypress Test Runner, exécutez :
 
 ```bash
 npm run cypress:open
 ```
-
----
-
 
