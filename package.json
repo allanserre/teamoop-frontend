@@ -5,25 +5,30 @@
     "ng": "ng serve --port 4200",
     "start": "ng serve",
     "build": "ng build",
-    "e2e": "npx cypress run",
+    "test": "npm run build:variables && npx cypress run --component && npx cypress run --e2e",
     "lint": "ng lint && stylelint \"src/**/*.{css,scss}\"",
+    "lint:fix": "stylelint \"src/**/*.{css,scss}\" --fix && ng lint --fix",
     "lint:eslint": "ng lint",
     "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "watch": "ng build --watch --configuration development",
     "cypress:open": "npx cypress open",
-    "cypress:run": "npx cypress run"
+    "cypress:run": "npx cypress run",
+    "build:variables": "node scripts/add-missing-variables-scss.js && sass --no-source-map src/styles/variables.scss temp/variables.css && node scripts/convert-css-to-json.js"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.0.0",
+    "@angular/cdk": "^18.2.14",
     "@angular/common": "^18.0.0",
     "@angular/compiler": "^18.0.0",
     "@angular/core": "^18.0.0",
     "@angular/forms": "^18.0.0",
+    "@angular/material": "^18.2.14",
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
     "@schematics/angular": "^18.0.6",
+    "cypress-real-events": "^1.14.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -35,7 +40,7 @@
     "@cypress/schematic": "^2.5.2",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "18.4.3",
-    "cypress": "latest",
+    "cypress": "^14.0.0",
     "eslint": "^9.16.0",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",
@@ -48,7 +53,7 @@
     "stylelint": "^16.12.0",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^14.0.0",
-    "typescript-eslint": "8.18.0",
-    "typescript": "~5.4.2"
+    "typescript": "~5.4.2",
+    "typescript-eslint": "8.18.0"
   }
 }

@@ -1,4 +1,4 @@
-import { User } from '../../models/user.model';
+import { User } from '@models/user.model';
 import { UserProfilComponent } from './user-profil.component'
 
 describe('UserProfilComponent', () => {
@@ -21,11 +21,11 @@ describe('UserProfilComponent', () => {
         },
       });
 
-    cy.get('[data-cy="test-component-username-display"]')
+    cy.get('[data-cy="username-text"]')
       .should('have.text', name);
 
 
-    cy.get('[data-cy="test-component-usermail-display"]')
+    cy.get('[data-cy="usermail-text"]')
       .should('have.text', mail);
   });
 })
