@@ -145,8 +145,8 @@ Les tests de composants sont organisés selon les catégories suivantes :
 Incluez les imports suivants dans vos fichiers de test de composant :
 
 ```typescript
-import { createOutputSpy } from 'cypress/angular-signals';
-import variables from '../cypress/variables.json';
+import { createOutputSpy } from 'cypress/angular';
+import variables from 'cypress/variables.json';
 import "cypress-real-events";
 ```
 
