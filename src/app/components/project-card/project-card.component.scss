@@ -13,7 +13,7 @@
 
 .card {
     position: relative;
-    background-color: $background-surface-color;
+    background-color: theme.get-color(gray,100);
     padding: 24px;
     border-radius: 8px;
     z-index: 2;
@@ -29,15 +29,15 @@
     transition: transform 0.3s ease-in-out;
     transform-origin: center;
     z-index: 1; 
-  }
-
-.back-card-dark {
-    background-color: theme.get-color(primary,700);
 
     .card-container:hover & {
         margin-top: 2.5px;
         transform: translate(2.5px, 0) rotate(-5deg);
     }
+}
+
+.back-card-dark {
+    background-color: theme.get-color(primary,700);
 }
 
 .back-card {
@@ -47,4 +47,11 @@
         margin-top: 2.5px;
         transform: translate(2.5px, 0) rotate(5deg);
     }
+}
+
+.card-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
 }

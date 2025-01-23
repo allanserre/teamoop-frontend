@@ -1,17 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Project } from './../../models/project.model';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ChipTagComponent } from "../chips/chip-tag/chip-tag.component";
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, ChipTagComponent],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {
-  project = new Project();
-  constructor() {
-    this.project.titre = "Project Title";
-    this.project.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc";
-  }
+  
+  @Input({required: true}) project!: Project;  
 }
