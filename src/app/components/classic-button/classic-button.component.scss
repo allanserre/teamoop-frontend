@@ -1,17 +1,13 @@
 @use 'variables' as v;
 
 button{
-
   padding: 0 20px;
   height: 36px;
-
   font-size: 14px;
   font-weight: 800;
-
   border-radius: 10px;
   border: solid 2px transparent;
   box-sizing: border-box;
-
   transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
 
   &:focus {
@@ -30,18 +26,23 @@ button{
   &.primary{
     background-color: v.$primary-color;
     color: v.$secondary-color;
+
     &:hover{
       background-color: v.$primary-hover;
+
       &:disabled{
         background-color: v.$primary-color;
       }
     }
+
     &.outlined{
       background-color: transparent;
       color: v.$primary-color;
+
       &:hover{
         border: v.$primary-color solid 2px;
         color: v.$primary-hover;
+
         &:disabled{
           background-color: transparent;
           border: solid 2px transparent;
@@ -53,17 +54,22 @@ button{
   &.secondary{
     background-color: v.$secondary-color;
     color: v.$black-color;
+
     &:hover{
       background-color: v.$secondary-hover;
+
       &:disabled{
         background-color: v.$secondary-color;
       }
     }
+
     &.outlined{
       background-color: transparent;
       color: v.$black-color;
+
       &:hover{
         border: v.$secondary-color solid 2px;
+
         &:disabled{
           background-color: transparent;
           border: solid 2px transparent;
@@ -75,17 +81,22 @@ button{
   &.success{
     background-color: v.$success-color;
     color: v.$secondary-color;
+
     &:hover{
       background-color: v.$success-color-hover;
+
       &:disabled{
         background-color: v.$success-color;
       }
     }
+
     &.outlined{
       background-color: transparent;
       color: v.$success-color;
+
       &:hover{
         border: v.$success-color solid 2px;
+
         &:disabled{
           background-color: transparent;
           border: solid 2px transparent;
@@ -97,17 +108,22 @@ button{
   &.error{
     background-color: v.$error-color;
     color: v.$secondary-color;
+
     &:hover{
       background-color: v.$error-color-hover;
+
       &:disabled{
         background-color: v.$error-color;
       }
     }
+
     &.outlined{
       background-color: transparent;
       color: v.$error-color;
+
       &:hover{
         border: v.$error-color solid 2px;
+
         &:disabled{
           background-color: transparent;
           border: solid 2px transparent;
@@ -119,17 +135,22 @@ button{
   &.danger{
     background-color: v.$danger-color;
     color: v.$secondary-color;
+
     &:hover{
       background-color: v.$danger-color-hover;
+
       &:disabled{
         background-color: v.$danger-color;
       }
     }
+
     &.outlined{
       background-color: transparent;
       color: v.$danger-color;
+
       &:hover{
         border: v.$danger-color solid 2px;
+
         &:disabled{
           background-color: transparent;
           border: solid 2px transparent;
@@ -141,19 +162,24 @@ button{
   &.black{
     background-color: v.$black-color;
     color: v.$white-color;
+
     &:hover{
       color: v.$black-color;
       background-color: v.$secondary-color;
+
       &:disabled{
         color: v.$white-color;
         background-color: v.$black-color;
       }
     }
+
     &.outlined{
       background-color: transparent;
       color: v.$black-color;
+
       &:hover{
         border: v.$black-color solid 2px;
+
         &:disabled{
           background-color: transparent;
           border: solid 2px transparent;
@@ -165,19 +191,24 @@ button{
   &.white{
     background-color: v.$white-color;
     color: v.$black-color;
+
     &:hover{
       color: v.$white-color;
       background-color: v.$black-color;
+
       &:disabled{
         background-color: v.$white-color;
         color: v.$black-color;
       }
     }
+
     &.outlined{
       background-color: transparent;
       color: v.$black-color;
+
       &:hover{
         border: v.$white-color solid 2px;
+
         &:disabled{
           background-color: transparent;
           border: solid 2px transparent;

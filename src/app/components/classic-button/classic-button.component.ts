@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-classic-button',
@@ -12,4 +12,13 @@ export class ClassicButtonComponent {
   @Input() color: 'primary' | 'secondary' | 'success' | 'error' | 'danger' | 'black' | 'white' = 'primary';
   @Input() style: 'outlined' | 'filled' = 'filled';
   @Input() disabled = false;
+
+  @Output() clickEvent = new EventEmitter<void>();
+
+  onClick(): void {
+    if (!this.disabled) {
+      this.clickEvent.emit();
+    }
+  }
+  
 }
