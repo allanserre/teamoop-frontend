@@ -2,7 +2,8 @@
 
 button{
   padding: 0 20px;
-  height: 36px;
+  min-height: 36px;
+  max-width: 144px;
   font-size: 14px;
   font-weight: 800;
   border-radius: 10px;
