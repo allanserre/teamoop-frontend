@@ -42,12 +42,12 @@ button{
       color: theme.get-color(primary, 500);
 
       &:hover{
-        border: theme.get-color(primary, 500) solid 2px;
+        border: theme.get-color(primary, 500) solid v.$border-width;
         color: theme.get-color(primary, 600);
 
         &:disabled{
           background-color: transparent;
-          border: solid 2px transparent;
+          border: solid v.$border-width transparent;
         }
       }
     }
@@ -70,11 +70,11 @@ button{
       color: black;
 
       &:hover{
-        border: theme.get-color(gray, 500) solid 2px;
+        border: theme.get-color(gray, 500) solid v.$border-width;
 
         &:disabled{
           background-color: transparent;
-          border: solid 2px transparent;
+          border: solid v.$border-width transparent;
         }
       }
     }
@@ -97,11 +97,11 @@ button{
       color: theme.get-color(green, 500);
 
       &:hover{
-        border: theme.get-color(green, 500) solid 2px;
+        border: theme.get-color(green, 500) solid v.$border-width;
 
         &:disabled{
           background-color: transparent;
-          border: solid 2px transparent;
+          border: solid v.$border-width transparent;
         }
       }
     }
@@ -124,11 +124,11 @@ button{
       color: theme.get-color(red, 500);
 
       &:hover{
-        border: theme.get-color(red, 500) solid 2px;
+        border: theme.get-color(red, 500) solid v.$border-width;
 
         &:disabled{
           background-color: transparent;
-          border: solid 2px transparent;
+          border: solid v.$border-width transparent;
         }
       }
     }
@@ -151,11 +151,11 @@ button{
       color: theme.get-color(orange, 500);
 
       &:hover{
-        border: theme.get-color(orange, 500) solid 2px;
+        border: theme.get-color(orange, 500) solid v.$border-width;
 
         &:disabled{
           background-color: transparent;
-          border: solid 2px transparent;
+          border: solid v.$border-width transparent;
         }
       }
     }
@@ -179,11 +179,11 @@ button{
       color: black;
 
       &:hover{
-        border: black solid 2px;
+        border: black solid v.$border-width;
 
         &:disabled{
           background-color: transparent;
-          border: solid 2px transparent;
+          border: solid v.$border-width transparent;
         }
       }
     }
@@ -208,11 +208,11 @@ button{
       color: black;
 
       &:hover{
-        border: white solid 2px;
+        border: white solid v.$border-width;
 
         &:disabled{
           background-color: transparent;
-          border: solid 2px transparent;
+          border: solid v.$border-width transparent;
         }
       }
     }
