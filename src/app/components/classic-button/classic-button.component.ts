@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { ButtonColor } from './button.type';
 
 @Component({
   selector: 'app-classic-button',
@@ -9,16 +10,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './classic-button.component.scss'
 })
 export class ClassicButtonComponent {
-  @Input() color: 'primary' | 'secondary' | 'success' | 'error' | 'danger' | 'black' | 'white' = 'primary';
-  @Input() style: 'outlined' | 'filled' = 'filled';
-  @Input() disabled = false;
+  color = input<ButtonColor>('primary');
+  filled = input<boolean>(true);
+  disabled = input<boolean>(false);
 
-  @Output() clickEvent = new EventEmitter<void>();
+  clicked = output<void>();
 
-  onClick(): void {
+  handleClick(): void {
     if (!this.disabled) {
-      this.clickEvent.emit();
+      this.clicked.emit();
     }
   }
-  
+
 }

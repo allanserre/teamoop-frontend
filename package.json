@@ -9,7 +9,6 @@
     "lint": "ng lint && stylelint \"src/**/*.{css,scss}\"",
     "lint:fix": "stylelint \"src/**/*.{css,scss}\" --fix && ng lint --fix",
     "lint:eslint": "ng lint",
-    "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "lint:stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
     "watch": "ng build --watch --configuration development",
     "cypress:open": "npx cypress open",

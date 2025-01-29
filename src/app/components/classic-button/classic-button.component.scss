@@ -1,13 +1,14 @@
 @use '@styles/theme.scss' as theme;
+@use '@styles/variables.scss' as v;
 
 button{
   padding: 0 20px;
   min-height: 36px;
   max-width: 144px;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: v.$regular-font-size;
+  font-weight: v.$font-weight-semibold;
   border-radius: 10px;
-  border: solid 2px transparent;
+  border: solid v.$border-width transparent;
   box-sizing: border-box;
   transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
 

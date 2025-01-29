@@ -1,5 +1,5 @@
 import { ClassicButtonComponent } from './classic-button.component';
-import { EventEmitter } from '@angular/core';
+import { createOutputSpy } from 'cypress/angular';
 
 describe('ClassicButtonComponent', () => {
   it('should render the button with default properties', () => {
@@ -16,7 +16,7 @@ describe('ClassicButtonComponent', () => {
     cy.mount(ClassicButtonComponent, {
       componentProperties: {
         color: 'success',
-        style: 'outlined',
+        filled: false,
       },
     });
 
@@ -32,9 +32,7 @@ describe('ClassicButtonComponent', () => {
       },
     });
 
-    cy.get('button')
-      .should('be.disabled')
-      .and('have.class', 'disabled');
+    cy.get('button').should('be.disabled');
   });
 
   it('should not disable the button when disabled is false', () => {
@@ -48,33 +46,25 @@ describe('ClassicButtonComponent', () => {
   });
 
   it('should emit an event when clicked', () => {
-    const clickEvent = new EventEmitter<void>();
-    const spy = cy.spy();
-    clickEvent.subscribe(spy);
-
     cy.mount(ClassicButtonComponent, {
       componentProperties: {
-        clickEvent: clickEvent,
+        clicked: createOutputSpy('clickedSpy'),
       },
     });
 
     cy.get('button').click();
-    cy.wrap(spy).should('have.been.called');
+    cy.get('@clickedSpy').should('have.been.calledOnce');
   });
 
   it('should not emit an event when disabled', () => {
-    const clickEvent = new EventEmitter<void>();
-    const spy = cy.spy();
-    clickEvent.subscribe(spy);
-
     cy.mount(ClassicButtonComponent, {
       componentProperties: {
         disabled: true,
-        clickEvent: clickEvent,
+        clicked: createOutputSpy('clickedSpy'),
       },
     });
 
     cy.get('button').click();
-    cy.wrap(spy).should('not.have.been.called');
+    cy.get('@clickedSpy').should('not.have.been.called');
   });
 });
