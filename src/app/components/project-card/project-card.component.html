@@ -1,9 +1,11 @@
 <div class="card-container">
     <div class="card">
-        <h3 data-cy="project-title" >{{ project.name }}</h3>
-        <p data-cy="project-description" >{{ project.description }}</p>
+        <h3 data-cy="project-title" class="project-title">{{ project().name }}</h3>
+        <p data-cy="project-description" class="project-description" >{{ project().description }}</p>
         <div  class="card-chips">
-            <app-chip-tag data-cy="project-tags" *ngFor="let chip of project.tags" [color]="chip.color">{{ chip.name }}</app-chip-tag>
+            @for (chip of project().tags; track chip) {
+                <app-chip-tag data-cy="project-tags" [color]="chip.color">{{ chip.name }}</app-chip-tag>
+            }
         </div>
     </div>
     <div class="back-card-dark"></div>
