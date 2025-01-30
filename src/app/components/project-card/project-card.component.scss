@@ -18,21 +18,33 @@
     border-radius: 8px;
     z-index: 2;
     display: block;
+    width: 312px;
+    height: 193px;
 }
+.project-title {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.project-description {
+    font-size: 14px;
+}
+
 .back-card,
 .back-card-dark{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    align-items: center;
+    width: 312px;
+    height: 188px;
     top: 0;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: transform 0.3s ease-in-out;
     transform-origin: center;
     z-index: 1; 
 
     .card-container:hover & {
         margin-top: 2.5px;
-        transform: translate(2.5px, 0) rotate(-5deg);
+        transform: rotate(-3.8deg);
     }
 }
 
@@ -45,7 +57,7 @@
 
     .card-container:hover & {      
         margin-top: 2.5px;
-        transform: translate(2.5px, 0) rotate(5deg);
+        transform: rotate(3.8deg);
     }
 }
 
@@ -53,5 +65,4 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 16px;
 }
