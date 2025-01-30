@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Project } from './../../models/project.model';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ChipTagComponent } from "../chips/chip-tag/chip-tag.component";
 
 @Component({
@@ -12,5 +12,5 @@ import { ChipTagComponent } from "../chips/chip-tag/chip-tag.component";
 })
 export class ProjectCardComponent {
   
-  @Input({required: true}) project!: Project;  
+  project = input.required<Project>();
 }
