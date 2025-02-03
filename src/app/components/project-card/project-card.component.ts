@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Project } from '@models/project.model';
 import { Component, input } from '@angular/core';
-import { ChipTagComponent } from "../chips/chip-tag/chip-tag.component";
+import { ChipTagComponent } from "@components/chips/chip-tag/chip-tag.component";
 
 @Component({
   selector: 'app-project-card',
