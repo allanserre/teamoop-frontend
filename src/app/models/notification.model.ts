@@ -2,7 +2,7 @@ export interface Notification {
   id: number,
   userId : number,
   isRead: boolean,
-  createdAt: Date,
+  createdAt: string,
   type : NotificationType
   message : string,
 }

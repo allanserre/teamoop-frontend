@@ -41,6 +41,10 @@ body {
   background: $background-surface-color;
 }
 
+i {
+  display: flex;
+}
+
 button {
   all: unset;
 }

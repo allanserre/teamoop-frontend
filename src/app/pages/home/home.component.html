@@ -1,10 +1,9 @@
 <p>{{ text() }}</p>
-<app-notification-row>
+<div style="display : flex; justify-content: center; flex-direction: column; padding: 18px; gap: 12px">
+  <app-notification-row [notification]="notification">
 
-</app-notification-row>
-<app-notification-row>
+  </app-notification-row>
+  <app-notification-row [notification]="notification">
 
-</app-notification-row>
-<app-notification-row>
-
-</app-notification-row>
+  </app-notification-row>
+</div>
