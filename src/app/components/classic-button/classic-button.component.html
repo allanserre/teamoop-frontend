@@ -1,13 +1,7 @@
 <button
-  [ngClass]="[color, (isFilled ? ' filled' : ' outlined')]"
+  [ngClass]="buttonClassList"
   [disabled]="isDisabled"
   [attr.aria-disabled]="isDisabled"
 >
-  <span class="icon" *ngIf="hasIcon">
-    <ng-content select="[icon]"></ng-content>
-  </span>
-
-  <span class="text">
-    <ng-content></ng-content>
-  </span>
+  <ng-content></ng-content>
 </button>

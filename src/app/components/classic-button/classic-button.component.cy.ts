@@ -22,7 +22,8 @@ describe('ClassicButtonComponent', () => {
 
     cy.get('button')
       .should('have.class', 'success')
-      .and('have.class', 'outlined');
+      .and('have.class', 'outlined')
+      .and('not.have.class', 'filled');
   });
 
   it('should disable the button when disabled is true', () => {
@@ -32,7 +33,9 @@ describe('ClassicButtonComponent', () => {
       },
     });
 
-    cy.get('button').should('be.disabled');
+    cy.get('button')
+      .should('be.disabled')
+      .and('have.attr', 'aria-disabled', 'true');
   });
 
   it('should not disable the button when disabled is false', () => {
@@ -42,7 +45,9 @@ describe('ClassicButtonComponent', () => {
       },
     });
 
-    cy.get('button').should('not.be.disabled');
+    cy.get('button')
+      .should('not.be.disabled')
+      .and('have.attr', 'aria-disabled', 'false');
   });
 
   it('should emit an event when clicked', () => {

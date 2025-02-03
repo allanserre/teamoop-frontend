@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, input, output, AfterContentInit } from '@angular/core';
+import { Component, ElementRef, input, output, AfterContentInit, signal } from '@angular/core';
 import { ButtonColor } from './button.type';
 
 @Component({
@@ -16,14 +16,14 @@ export class ClassicButtonComponent implements AfterContentInit {
 
   clicked = output<void>();
 
-  hasIcon = false;
+  hasIcon = signal(false);
 
   constructor(private elementRef: ElementRef) {}
 
   ngAfterContentInit(): void {
     setTimeout(() => {
       this.sanitizeIcons();
-      this.hasIcon = this.detectIcon();
+      this.hasIcon.set(this.detectIcon());
     });
   }
 
@@ -34,24 +34,20 @@ export class ClassicButtonComponent implements AfterContentInit {
 
     const buttonElement: HTMLElement = this.elementRef.nativeElement;
 
-    const icons: NodeListOf<HTMLElement> = buttonElement.querySelectorAll('i:not([icon])');
+    const icons: NodeListOf<HTMLElement> = buttonElement.querySelectorAll('i, mat-icon');
 
     if (icons.length > 1) {
 
       icons.forEach((icon: HTMLElement, index: number) => {
         if (index > 0) {
           icon.remove();
-        } else {
-          icon.setAttribute('icon', '');
         }
       });
-    } else if (icons.length === 1) {
-      icons[0].setAttribute('icon', '');
     }
   }
 
   private detectIcon(): boolean {
-    return this.elementRef.nativeElement.querySelector('i[icon]') !== null;
+    return this.elementRef.nativeElement.querySelector('i') !== null;
   }
 
   handleClick(): void {
@@ -64,7 +60,7 @@ export class ClassicButtonComponent implements AfterContentInit {
     return this.disabled();
   }
 
-  get isFilled(): boolean {
-    return this.filled();
+  get buttonClassList(): string[] {
+    return [this.color(), (this.filled() ? ' filled' : ' outlined')]
   }
 }
