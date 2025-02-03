@@ -2,9 +2,10 @@ import { Tags } from '@models/tags.model';
 import { ProjectCardComponent } from './project-card.component'
 import { Project } from '@models/project.model'
 
-
-
 describe('ProjectCardComponent', () => {
+
+  const description = "Description du projet";
+  const projectName = "Nom du projet";
 
   //constantes
   const tags: Tags[] = [
@@ -12,10 +13,10 @@ describe('ProjectCardComponent', () => {
     {name: '#tag2', color: 'red'},
     {name: '#tag3', color: 'blue'}
   ];
-  
+
   const project: Project = {
-    name: 'Nom du projet', 
-    description: 'Lorem ipsum dolor sit amet consectetur. Morbi est eget nibh ut. Etiam aliquam tellus sagittis...',
+    name: projectName,
+    description: description,
     startDate: new Date(),
     endDate: new Date(),
     active: true,
@@ -28,13 +29,13 @@ describe('ProjectCardComponent', () => {
   })
 
   it('should display project title', () => {
-    
+
     cy.mount(ProjectCardComponent, {
       componentProperties: {
         project: project
       }
     })
-    cy.get('[data-cy="project-title"]').should('have.text', 'Nom du projet')
+    cy.get('[data-cy="project-title"]').should('have.text', projectName)
   })
 
   it('should display project description', () => {
@@ -43,7 +44,7 @@ describe('ProjectCardComponent', () => {
         project: project
       }
     })
-    cy.get('[data-cy="project-description"]').should('have.text', 'Description du projet')
+    cy.get('[data-cy="project-description"]').should('have.text', description)
   })
 
   it('should display project tags', () => {
