@@ -72,4 +72,23 @@ describe('ClassicButtonComponent', () => {
     cy.get('button').click();
     cy.get('@clickedSpy').should('not.have.been.called');
   });
+
+  it('should keep only one icon when multiple icons are projected', () => {
+    cy.mount(
+      `<app-classic-button>
+        <i class="fa fa-check"></i>
+        <i class="fa fa-trash"></i>
+      </app-classic-button>`,
+      {
+        declarations: [ClassicButtonComponent],
+      }
+    );
+
+    cy.get('button .icon')
+      .find('i')
+      .should('have.length', 1)
+      .and('have.class', 'fa-check');
+
+    cy.get('button .text').should('exist');
+  });
 });
