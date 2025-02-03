@@ -1,0 +1,79 @@
+@use 'theme' as theme;
+@import "variables";
+
+.card-container {
+  position: relative;
+  width: 330px;
+  min-height: max-content;
+  margin: 32px;
+  font-family: $font-family;
+  font-weight: $font-weight;
+}
+
+.card {
+  position: relative;
+  background-color: theme.get-color(gray,100);
+  padding: 24px;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 312px;
+  height: 193px;
+}
+
+.project-title {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.project-description {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.back-card,
+.back-card-dark{
+  position: absolute;
+  align-items: center;
+  width: 312px;
+  height: 188px;
+  top: 0;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+  z-index: 1;
+  opacity: 0;
+}
+
+.back-card-dark {
+  background-color: theme.get-color(primary,700);
+
+  .card-container:hover & {
+    transform: rotate(-3.8deg);
+    opacity: 1;
+  }
+}
+
+.back-card {
+  background-color: theme.get-color(primary,500);
+
+  .card-container:hover & {
+    opacity: 1;
+    transform: rotate(3.8deg);
+  }
+}
+
+
+
+.card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
