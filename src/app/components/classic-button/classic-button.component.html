@@ -1,7 +1,7 @@
 <button
   [ngClass]="buttonClassList"
-  [disabled]="isDisabled"
-  [attr.aria-disabled]="isDisabled"
+  [disabled]="this.disabled()"
+  [attr.aria-disabled]="this.disabled()"
 >
   <ng-content></ng-content>
 </button>

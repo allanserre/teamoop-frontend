@@ -51,14 +51,11 @@ export class ClassicButtonComponent implements AfterContentInit {
   }
 
   handleClick(): void {
-    if (!this.isDisabled) {
+    if (!this.disabled) {
       this.clicked.emit();
     }
   }
 
-  get isDisabled(): boolean {
-    return this.disabled();
-  }
 
   get buttonClassList(): string[] {
     return [this.color(), (this.filled() ? ' filled' : ' outlined')]
