@@ -7,7 +7,7 @@ import { ButtonColor } from './button.type';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './classic-button.component.html',
-  styleUrl: './classic-button.component.scss'
+  styleUrl: './classic-button.component.scss',
 })
 export class ClassicButtonComponent {
   color = input<ButtonColor>('primary');
@@ -21,5 +21,4 @@ export class ClassicButtonComponent {
       this.clicked.emit();
     }
   }
-
 }

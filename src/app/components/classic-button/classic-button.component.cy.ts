@@ -5,11 +5,7 @@ describe('ClassicButtonComponent', () => {
   it('should render the button with default properties', () => {
     cy.mount(ClassicButtonComponent);
 
-    cy.get('button')
-      .should('exist')
-      .and('have.class', 'primary')
-      .and('have.class', 'filled')
-      .and('not.be.disabled');
+    cy.get('button').should('exist').and('have.class', 'primary').and('have.class', 'filled').and('not.be.disabled');
   });
 
   it('should apply the correct classes based on inputs', () => {
@@ -20,9 +16,7 @@ describe('ClassicButtonComponent', () => {
       },
     });
 
-    cy.get('button')
-      .should('have.class', 'success')
-      .and('have.class', 'outlined');
+    cy.get('button').should('have.class', 'success').and('have.class', 'outlined');
   });
 
   it('should disable the button when disabled is true', () => {

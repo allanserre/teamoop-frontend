@@ -1,7 +1,7 @@
 name: Test and cypress report
 
 env:
-  NODE_VERSION : '22.8.0'
+  NODE_VERSION: '22.8.0'
 
 on:
   pull_request:
@@ -34,7 +34,6 @@ jobs:
 
       - name: Run Stylelint
         run: npm run lint:stylelint
-
 
   cypress-e2e:
     name: Cypress Tests
@@ -74,8 +73,7 @@ jobs:
           install: false
 
       - name: Copy reports files
-        run:
-          cp -r cypress/videos mochawesome-report/videos
+        run: cp -r cypress/videos mochawesome-report/videos
 
       - name: Save Cypress Report
         uses: actions/upload-artifact@v4

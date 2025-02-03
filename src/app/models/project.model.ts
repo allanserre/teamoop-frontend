@@ -1,10 +1,10 @@
-import { Tags } from "./tags.model";
+import { Tags } from './tags.model';
 
 export interface Project {
-    name: string;
-    description: string;
-    startDate: Date;
-    endDate: Date;
-    active: boolean;
-    tags: Tags[];
+  name: string;
+  description: string;
+  startDate: Date;
+  endDate: Date;
+  active: boolean;
+  tags: Tags[];
 }
