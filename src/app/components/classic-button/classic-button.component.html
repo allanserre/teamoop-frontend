@@ -1,7 +1,7 @@
 <button
-  [ngClass]="[color, (filled() ? ' filled' : ' outlined')]"
-  [disabled]="disabled()"
-  [attr.aria-disabled]="disabled()"
+  [ngClass]="buttonClassList()"
+  [disabled]="this.disabled()"
+  [attr.aria-disabled]="this.disabled()"
 >
   <ng-content></ng-content>
 </button>
