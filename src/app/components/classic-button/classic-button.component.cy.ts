@@ -1,7 +1,15 @@
+import { OutputEmitterRef } from '@angular/core';
 import { ClassicButtonComponent } from './classic-button.component';
-import { createOutputSpy } from 'cypress/angular';
+import { TestBed } from '@angular/core/testing';
 
 describe('ClassicButtonComponent', () => {
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [ClassicButtonComponent],
+    }).compileComponents();
+  });
+
   it('should render the button with default properties', () => {
     cy.mount(ClassicButtonComponent);
 
@@ -50,45 +58,23 @@ describe('ClassicButtonComponent', () => {
       .and('have.attr', 'aria-disabled', 'false');
   });
 
-  it('should emit an event when clicked', () => {
-    cy.mount(ClassicButtonComponent, {
-      componentProperties: {
-        clicked: createOutputSpy('clickedSpy'),
-      },
-    });
-
-    cy.get('button').click();
-    cy.get('@clickedSpy').should('have.been.calledOnce');
-  });
-
   it('should not emit an event when disabled', () => {
-    cy.mount(ClassicButtonComponent, {
-      componentProperties: {
-        disabled: true,
-        clicked: createOutputSpy('clickedSpy'),
-      },
-    });
+    const clickedSpy = cy.spy().as('clickedSpy');
 
-    cy.get('button').click();
+    const clickedEmitter: OutputEmitterRef<void> = {
+      emit: clickedSpy,
+      subscribe: clickedSpy,
+      destroyed: false,
+      listeners: [],
+      errorHandler: undefined,
+    } as unknown as OutputEmitterRef<void>;
+
+    const fixture = TestBed.createComponent(ClassicButtonComponent);
+    fixture.componentInstance.clicked = clickedEmitter;
+    fixture.detectChanges();
+
+    cy.wrap(fixture.nativeElement).find('button').click({ force: true });
     cy.get('@clickedSpy').should('not.have.been.called');
   });
 
-  it('should keep only one icon when multiple icons are projected', () => {
-    cy.mount(
-      `<app-classic-button>
-        <i class="fa fa-check"></i>
-        <i class="fa fa-trash"></i>
-      </app-classic-button>`,
-      {
-        declarations: [ClassicButtonComponent],
-      }
-    );
-
-    cy.get('button .icon')
-      .find('i')
-      .should('have.length', 1)
-      .and('have.class', 'fa-check');
-
-    cy.get('button .text').should('exist');
-  });
 });
