@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { ClassicButtonComponent } from '@components/classic-button/classic-button.component';
 
 @Component({
-  selector: 'top-bar',
+  selector: 'app-top-bar',
   standalone: true,
   imports: [ClassicButtonComponent, RouterLink],
   templateUrl: './top-bar.component.html',
