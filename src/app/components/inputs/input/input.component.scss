@@ -17,9 +17,9 @@
 }
 
 .input {
-    border-radius: 4px;
+    border-radius: $input-border-radius;
     border: none;
-    background-color: theme.get-color(gray,500);
+    background-color: $input-background-color;
     color: $text-color;
 
   &:focus {
@@ -28,7 +28,7 @@
   }
 
   &::placeholder {
-    color: theme.get-color(primary,300);
+    color: $placeholder-text-color
   }
 }
 
