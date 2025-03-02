@@ -1,5 +1,5 @@
 @use 'theme' as theme;
-@import "variables";
+@import 'variables';
 
 button {
   padding: 0 20px;
@@ -48,7 +48,7 @@ button {
       background-color: transparent;
       color: theme.get-color(primary, 500);
 
-      &:hover{
+      &:hover {
         border: theme.get-color(primary, 500) solid $border-width;
         color: theme.get-color(primary, 600);
 
@@ -76,7 +76,7 @@ button {
       background-color: transparent;
       color: black;
 
-      &:hover{
+      &:hover {
         border: theme.get-color(gray, 500) solid $border-width;
 
         &:disabled {
@@ -103,7 +103,7 @@ button {
       background-color: transparent;
       color: theme.get-color(green, 500);
 
-      &:hover{
+      &:hover {
         border: theme.get-color(green, 500) solid $border-width;
 
         &:disabled {
@@ -130,7 +130,7 @@ button {
       background-color: transparent;
       color: theme.get-color(red, 500);
 
-      &:hover{
+      &:hover {
         border: theme.get-color(red, 500) solid $border-width;
 
         &:disabled {
@@ -157,7 +157,7 @@ button {
       background-color: transparent;
       color: theme.get-color(orange, 500);
 
-      &:hover{
+      &:hover {
         border: theme.get-color(orange, 500) solid $border-width;
 
         &:disabled {
@@ -185,7 +185,7 @@ button {
       background-color: transparent;
       color: black;
 
-      &:hover{
+      &:hover {
         border: black solid $border-width;
 
         &:disabled {
@@ -214,7 +214,7 @@ button {
       background-color: transparent;
       color: black;
 
-      &:hover{
+      &:hover {
         border: white solid $border-width;
 
         &:disabled {

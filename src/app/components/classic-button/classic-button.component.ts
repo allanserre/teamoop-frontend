@@ -17,10 +17,7 @@ export class ClassicButtonComponent implements AfterContentInit {
   clicked = output<void>();
   hasIcon = signal(false);
 
-  buttonClassList = computed(() => [
-    this.color(),
-    this.filled() ? 'filled' : 'outlined'
-  ]);
+  buttonClassList = computed(() => [this.color(), this.filled() ? 'filled' : 'outlined']);
 
   constructor(private elementRef: ElementRef) {}
 
