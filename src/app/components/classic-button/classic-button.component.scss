@@ -1,22 +1,26 @@
-@use '@styles/theme.scss' as theme;
-@use '@styles/variables.scss' as v;
+@use 'theme' as theme;
+@import "variables";
 
 button {
   padding: 0 20px;
   min-height: 36px;
   max-width: 144px;
-  font-size: v.$regular-font-size;
-  font-weight: v.$font-weight-semibold;
+  font-size: $regular-font-size;
+  font-weight: $font-weight-semibold;
   border-radius: 10px;
-  border: solid v.$border-width transparent;
+  border: solid $border-width transparent;
   box-sizing: border-box;
   transition:
     background-color 0.3s ease,
     border 0.3s ease,
     color 0.3s ease;
 
+  i {
+    font-size: $regular-font-size;
+  }
+
   &:focus {
-    outline: 2px solid;
+    outline: $border-width solid;
   }
 
   &:hover {
@@ -44,13 +48,13 @@ button {
       background-color: transparent;
       color: theme.get-color(primary, 500);
 
-      &:hover {
-        border: theme.get-color(primary, 500) solid v.$border-width;
+      &:hover{
+        border: theme.get-color(primary, 500) solid $border-width;
         color: theme.get-color(primary, 600);
 
         &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
@@ -72,12 +76,12 @@ button {
       background-color: transparent;
       color: black;
 
-      &:hover {
-        border: theme.get-color(gray, 500) solid v.$border-width;
+      &:hover{
+        border: theme.get-color(gray, 500) solid $border-width;
 
         &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
@@ -99,12 +103,12 @@ button {
       background-color: transparent;
       color: theme.get-color(green, 500);
 
-      &:hover {
-        border: theme.get-color(green, 500) solid v.$border-width;
+      &:hover{
+        border: theme.get-color(green, 500) solid $border-width;
 
         &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
@@ -126,12 +130,12 @@ button {
       background-color: transparent;
       color: theme.get-color(red, 500);
 
-      &:hover {
-        border: theme.get-color(red, 500) solid v.$border-width;
+      &:hover{
+        border: theme.get-color(red, 500) solid $border-width;
 
         &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
@@ -153,12 +157,12 @@ button {
       background-color: transparent;
       color: theme.get-color(orange, 500);
 
-      &:hover {
-        border: theme.get-color(orange, 500) solid v.$border-width;
+      &:hover{
+        border: theme.get-color(orange, 500) solid $border-width;
 
         &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
@@ -181,12 +185,12 @@ button {
       background-color: transparent;
       color: black;
 
-      &:hover {
-        border: black solid v.$border-width;
+      &:hover{
+        border: black solid $border-width;
 
         &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
@@ -210,12 +214,12 @@ button {
       background-color: transparent;
       color: black;
 
-      &:hover {
-        border: white solid v.$border-width;
+      &:hover{
+        border: white solid $border-width;
 
         &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
