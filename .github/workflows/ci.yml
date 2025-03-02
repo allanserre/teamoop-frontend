@@ -42,17 +42,19 @@ jobs:
     name: Cypress Tests
     runs-on: ubuntu-24.04
     needs: lint
-    services:
-      springboot:
-        image: ghcr.io/lenelson/teamoop-backend:latest
-        ports:
-          - 8080:8080
-        environment:
-          SPRING_PROFILES_ACTIVE: test
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Pull SpringBoot Image
+        run: |
+          docker pull ghcr.io/lenelson/teamoop-backend:latest
+
+      - name: Start SpringBoot
+        run: |
+          docker run -d -p 8080:8080 -e SPRING_PROFILES_ACTIVE=test ghcr.io/lenelson/teamoop-backend:latest
+          
       - name: Wait for Spring Boot to be ready
         run: |
           echo "Waiting for Spring Boot service to be ready..."
