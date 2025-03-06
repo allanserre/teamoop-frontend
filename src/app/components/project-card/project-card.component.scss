@@ -1,5 +1,5 @@
 @use 'theme' as theme;
-@import "variables";
+@import 'variables';
 
 .card-container {
   position: relative;
@@ -12,7 +12,7 @@
 
 .card {
   position: relative;
-  background-color: theme.get-color(gray,100);
+  background-color: theme.get-color(gray, 100);
   padding: 24px;
   border-radius: 8px;
   z-index: 2;
@@ -39,7 +39,7 @@
 }
 
 .back-card,
-.back-card-dark{
+.back-card-dark {
   position: absolute;
   align-items: center;
   width: 312px;
@@ -53,7 +53,7 @@
 }
 
 .back-card-dark {
-  background-color: theme.get-color(primary,700);
+  background-color: theme.get-color(primary, 700);
 
   .card-container:hover & {
     transform: rotate(-3.8deg);
@@ -62,15 +62,13 @@
 }
 
 .back-card {
-  background-color: theme.get-color(primary,500);
+  background-color: theme.get-color(primary, 500);
 
   .card-container:hover & {
     opacity: 1;
     transform: rotate(3.8deg);
   }
 }
-
-
 
 .card-chips {
   display: flex;

@@ -19,10 +19,10 @@ $border-width: 1px;
 //                    COLOR VARIABLES                     //
 // ====================================================== //
 
-$outline-color: rgba(theme.get-color(primary,950),0.25);
-$hover-color: rgba(theme.get-color(primary,950),0.15);
-$text-color: theme.get-color(dark,500);
-$background-surface-color: theme.get-color(primary,50);
+$outline-color: rgba(theme.get-color(primary, 950), 0.25);
+$hover-color: rgba(theme.get-color(primary, 950), 0.15);
+$text-color: theme.get-color(dark, 500);
+$background-surface-color: theme.get-color(primary, 50);
 
 // ====================================================== //
 //              COMPONENT STYLES VARIABLES                //
@@ -30,17 +30,17 @@ $background-surface-color: theme.get-color(primary,50);
 
 // CHIP MENU
 
-$chip-menu-hover-color: theme.get-color(gray,500);
-$chip-menu-active-color: theme.get-color(primary,300);
+$chip-menu-hover-color: theme.get-color(gray, 500);
+$chip-menu-active-color: theme.get-color(primary, 300);
 
 // CHIP-TAG
 
 $chip-tag-opacity: 0.16;
-$chip-tag-green-background: rgba(theme.get-color(green, 500),$chip-tag-opacity);
-$chip-tag-red-background: rgba(theme.get-color(red, 500),$chip-tag-opacity);
-$chip-tag-blue-background: rgba(theme.get-color(primary, 500),$chip-tag-opacity);
-$chip-tag-light-blue-background: rgba(theme.get-color(gray, 500),$chip-tag-opacity);
-$chip-tag-orange-background: rgba(theme.get-color(orange, 500),$chip-tag-opacity);
+$chip-tag-green-background: rgba(theme.get-color(green, 500), $chip-tag-opacity);
+$chip-tag-red-background: rgba(theme.get-color(red, 500), $chip-tag-opacity);
+$chip-tag-blue-background: rgba(theme.get-color(primary, 500), $chip-tag-opacity);
+$chip-tag-light-blue-background: rgba(theme.get-color(gray, 500), $chip-tag-opacity);
+$chip-tag-orange-background: rgba(theme.get-color(orange, 500), $chip-tag-opacity);
 $chip-tag-green-color: theme.get-color(green, 500);
 $chip-tag-red-color: theme.get-color(red, 500);
 $chip-tag-blue-color: theme.get-color(primary, 500);
@@ -69,5 +69,4 @@ $chip-tag-orange-color: theme.get-color(orange, 500);
   --chip-tag-light-blue-color: #{$chip-tag-light-blue-color};
   --chip-tag-orange-color: #{$chip-tag-orange-color};
   --chip-tag-opacity: #{$chip-tag-opacity};
-
-};
+}

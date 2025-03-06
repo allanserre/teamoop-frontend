@@ -147,7 +147,7 @@ Incluez les imports suivants dans vos fichiers de test de composant :
 ```typescript
 import { createOutputSpy } from 'cypress/angular';
 import variables from 'cypress/variables.json';
-import "cypress-real-events";
+import 'cypress-real-events';
 ```
 
 ### Gestion des variables SCSS pour les tests visuels
@@ -174,4 +174,3 @@ Pour exécuter et déboguer visuellement les tests avec Cypress Test Runner, ex�
 ```bash
 npm run cypress:open
 ```
-

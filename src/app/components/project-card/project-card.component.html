@@ -1,11 +1,14 @@
 <div class="card-container">
-
   <div class="card">
     <div>
-      <h3 data-cy="project-title" class="project-title">{{ project().name }}</h3>
-      <p data-cy="project-description" class="project-description" >{{ project().description }}</p>
+      <h3 data-cy="project-title" class="project-title">
+        {{ project().name }}
+      </h3>
+      <p data-cy="project-description" class="project-description">
+        {{ project().description }}
+      </p>
     </div>
-    <div  class="card-chips">
+    <div class="card-chips">
       @for (chip of project().tags; track chip) {
         <app-chip-tag data-cy="project-tags" [color]="chip.color">{{ chip.name }}</app-chip-tag>
       }
