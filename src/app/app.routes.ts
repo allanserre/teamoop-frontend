@@ -5,5 +5,5 @@ import { DefaultPageWrapperComponent } from '@components/layout/default-page-wra
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: '', component: DefaultPageWrapperComponent , children: [{ path: 'notifications', component: NotificationsComponent }] },
+  { path: '', component: DefaultPageWrapperComponent, children: [{ path: 'notifications', component: NotificationsComponent }] },
 ];

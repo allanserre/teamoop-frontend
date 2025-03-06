@@ -11,6 +11,7 @@ import { NotificationsMock } from './mock/notifications.mock';
 export class NotificationService {
   private apiUrl = environment.apiUrl;
   private mock = environment.apiUrl;
+  
   private http: HttpClient = inject(HttpClient);
 
   private _notificationsSubject: BehaviorSubject<AppNotification[]> = new BehaviorSubject<AppNotification[]>([]);
