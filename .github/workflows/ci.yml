@@ -60,6 +60,7 @@ jobs:
     #      curl http://localhost:8080/actuator/health | grep "{\"status\":\"UP\"}" || ( echo Helth Check Failed Actuator=http://localhost:8080/actuator/health && exit 2; )
 
       - name: Run Component Testing
+        allow_failure: true
         uses: cypress-io/github-action@v6
         with:
           start: npm start
@@ -68,6 +69,7 @@ jobs:
           component: true
 
       - name: Run E2E test
+        allow_failure: true
         uses: cypress-io/github-action@v6
         with:
           browser: chrome

@@ -25,7 +25,7 @@ export default defineConfig({
       });
     },
   },
-  video: true,
+  video: false,
   viewportHeight: 1080,
   viewportWidth: 1920,
   component: {
