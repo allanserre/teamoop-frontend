@@ -1,8 +1,6 @@
-import { Component, signal } from '@angular/core';
-import {MainService} from '@services/main.service';
-import {NotificationRowComponent} from '@components/notifications/notification-row/notification-row.component';
-import {Notification, NotificationType} from '@models/notification.model';
-
+import { Component } from '@angular/core';
+import { NotificationRowComponent } from '@components/notifications/notification-row/notification-row.component';
+import { NotificationType, AppNotification} from '@models/notification.model';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +9,10 @@ import {Notification, NotificationType} from '@models/notification.model';
     NotificationRowComponent
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  text = signal("");
-
-  notification : Notification = {
+  notification : AppNotification = {
     id: 1,
     userId: 42,
     isRead: false,
@@ -25,9 +21,4 @@ export class HomeComponent {
     message: "vous a envoyé un nouveau message."
   };
 
-  constructor(private service: MainService) {
-    this.service.getHelloWorld().subscribe(res => {
-      this.text.set(res);
-    })
-  }
 }

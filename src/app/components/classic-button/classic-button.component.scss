@@ -1,22 +1,29 @@
-@use 'theme.scss' as theme;
-@use 'variables.scss' as v;
+@use 'theme' as theme;
+@import 'variables';
 
-button{
+button {
   padding: 0 20px;
   min-height: 36px;
-  max-width: 144px;
-  font-size: v.$regular-font-size;
-  font-weight: v.$font-weight-semibold;
+  max-width: 200px;
+  font-size: $regular-font-size;
+  font-weight: $font-weight-semibold;
   border-radius: 10px;
-  border: solid v.$border-width transparent;
+  border: solid $border-width transparent;
   box-sizing: border-box;
-  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border 0.3s ease,
+    color 0.3s ease;
 
-  &:focus {
-    outline: 2px solid;
+  i {
+    font-size: $regular-font-size;
   }
 
-  &:hover{
+  &:focus {
+    outline: $border-width solid;
+  }
+
+  &:hover {
     cursor: pointer;
   }
 
@@ -25,137 +32,137 @@ button{
     cursor: not-allowed;
   }
 
-  &.primary{
+  &.primary {
     background-color: theme.get-color(primary, 500);
     color: white;
 
-    &:hover{
+    &:hover {
       background-color: theme.get-color(primary, 600);
 
-      &:disabled{
+      &:disabled {
         background-color: theme.get-color(primary, 400);
       }
     }
 
-    &.outlined{
+    &.outlined {
       background-color: transparent;
       color: theme.get-color(primary, 500);
 
-      &:hover{
-        border: theme.get-color(primary, 500) solid v.$border-width;
+      &:hover {
+        border: theme.get-color(primary, 500) solid $border-width;
         color: theme.get-color(primary, 600);
 
-        &:disabled{
+        &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
   }
 
-  &.secondary{
+  &.secondary {
     background-color: theme.get-color(gray, 500);
     color: black;
 
-    &:hover{
+    &:hover {
       background-color: theme.get-color(gray, 600);
 
-      &:disabled{
+      &:disabled {
         background-color: theme.get-color(gray, 500);
       }
     }
 
-    &.outlined{
+    &.outlined {
       background-color: transparent;
       color: black;
 
-      &:hover{
-        border: theme.get-color(gray, 500) solid v.$border-width;
+      &:hover {
+        border: theme.get-color(gray, 500) solid $border-width;
 
-        &:disabled{
+        &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
   }
 
-  &.success{
+  &.success {
     background-color: theme.get-color(green, 500);
     color: white;
 
-    &:hover{
+    &:hover {
       background-color: theme.get-color(green, 600);
 
-      &:disabled{
+      &:disabled {
         background-color: theme.get-color(green, 500);
       }
     }
 
-    &.outlined{
+    &.outlined {
       background-color: transparent;
       color: theme.get-color(green, 500);
 
-      &:hover{
-        border: theme.get-color(green, 500) solid v.$border-width;
+      &:hover {
+        border: theme.get-color(green, 500) solid $border-width;
 
-        &:disabled{
+        &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
   }
 
-  &.error{
+  &.error {
     background-color: theme.get-color(red, 500);
     color: white;
 
-    &:hover{
+    &:hover {
       background-color: theme.get-color(red, 600);
 
-      &:disabled{
+      &:disabled {
         background-color: theme.get-color(red, 500);
       }
     }
 
-    &.outlined{
+    &.outlined {
       background-color: transparent;
       color: theme.get-color(red, 500);
 
-      &:hover{
-        border: theme.get-color(red, 500) solid v.$border-width;
+      &:hover {
+        border: theme.get-color(red, 500) solid $border-width;
 
-        &:disabled{
+        &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
   }
 
-  &.danger{
+  &.danger {
     background-color: theme.get-color(orange, 500);
     color: white;
 
-    &:hover{
+    &:hover {
       background-color: theme.get-color(orange, 600);
 
-      &:disabled{
+      &:disabled {
         background-color: theme.get-color(orange, 500);
       }
     }
 
-    &.outlined{
+    &.outlined {
       background-color: transparent;
       color: theme.get-color(orange, 500);
 
-      &:hover{
-        border: theme.get-color(orange, 500) solid v.$border-width;
+      &:hover {
+        border: theme.get-color(orange, 500) solid $border-width;
 
-        &:disabled{
+        &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
@@ -165,58 +172,56 @@ button{
     background-color: theme.get-color(dark, 500);
     color: white;
 
-    &:hover{
+    &:hover {
       background-color: theme.get-color(gray, 800);
 
-      &:disabled{
+      &:disabled {
         color: white;
         background-color: black;
       }
     }
 
-    &.outlined{
+    &.outlined {
       background-color: transparent;
       color: black;
 
-      &:hover{
-        border: black solid v.$border-width;
+      &:hover {
+        border: black solid $border-width;
 
-        &:disabled{
+        &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
   }
 
-  &.white{
+  &.white {
     background-color: white;
     color: black;
 
-    &:hover{
+    &:hover {
       color: white;
       background-color: black;
 
-      &:disabled{
+      &:disabled {
         background-color: white;
         color: theme.get-color(gray, 400);
       }
     }
 
-    &.outlined{
+    &.outlined {
       background-color: transparent;
       color: black;
 
-      &:hover{
-        border: white solid v.$border-width;
+      &:hover {
+        border: white solid $border-width;
 
-        &:disabled{
+        &:disabled {
           background-color: transparent;
-          border: solid v.$border-width transparent;
+          border: solid $border-width transparent;
         }
       }
     }
   }
-
 }
-

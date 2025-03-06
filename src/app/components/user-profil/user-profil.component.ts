@@ -6,7 +6,7 @@ import { User } from '../../models/user.model';
   standalone: true,
   imports: [],
   templateUrl: './user-profil.component.html',
-  styleUrl: './user-profil.component.scss'
+  styleUrl: './user-profil.component.scss',
 })
 export class UserProfilComponent {
   user = input.required<User>();

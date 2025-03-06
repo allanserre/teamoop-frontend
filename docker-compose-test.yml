@@ -4,18 +4,19 @@ services:
     container_name: teamoop-backend
     ports:
       - '8080:8080'
-  redis:
-    image: redis:7.4.2-alpine
-    container_name: redis
-    ports:
-      - '6379:6379'
+    environment:
+      - SPRING_PROFILES_ACTIVE=test
     networks:
       - teamoop-network
-    command: ['redis-server', '--appendonly', 'yes', '--requirepass', 'password']
-
-volumes:
-  postgres-data:
-    driver: local
+      
+  redis:
+    image: redis:7.4.2
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - teamoop-network
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "password"]
 
 networks:
   teamoop-network:

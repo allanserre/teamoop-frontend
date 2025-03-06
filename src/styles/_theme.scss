@@ -1,9 +1,7 @@
-@use "sass:map";
-@import "color-variable";
-
+@use 'sass:map';
+@import 'color-variable';
 
 // Base Color Variables
-
 
 $dark-colors: (
   50: $dark-50,
@@ -16,7 +14,7 @@ $dark-colors: (
   700: $dark-700,
   800: $dark-800,
   900: $dark-900,
-  950: $dark-950
+  950: $dark-950,
 );
 $gray-colors: (
   50: $gray-50,
@@ -29,7 +27,7 @@ $gray-colors: (
   700: $gray-700,
   800: $gray-800,
   900: $gray-900,
-  950: $gray-950
+  950: $gray-950,
 );
 $primary-colors: (
   50: $primary-50,
@@ -42,7 +40,7 @@ $primary-colors: (
   700: $primary-700,
   800: $primary-800,
   900: $primary-900,
-  950: $primary-950
+  950: $primary-950,
 );
 $secondary-colors: (
   50: $secondary-50,
@@ -55,7 +53,7 @@ $secondary-colors: (
   700: $secondary-700,
   800: $secondary-800,
   900: $secondary-900,
-  950: $secondary-950
+  950: $secondary-950,
 );
 $orange-colors: (
   50: $orange-50,
@@ -68,7 +66,7 @@ $orange-colors: (
   700: $orange-700,
   800: $orange-800,
   900: $orange-900,
-  950: $orange-950
+  950: $orange-950,
 );
 $red-colors: (
   50: $red-50,
@@ -81,7 +79,7 @@ $red-colors: (
   700: $red-700,
   800: $red-800,
   900: $red-900,
-  950: $red-950
+  950: $red-950,
 );
 $green-colors: (
   50: $green-50,
@@ -94,7 +92,7 @@ $green-colors: (
   700: $green-700,
   800: $green-800,
   900: $green-900,
-  950: $green-950
+  950: $green-950,
 );
 $palettes: (
   dark: $dark-colors,
@@ -116,7 +114,7 @@ $palettes: (
 
   $color: map.get($palette, $shade);
 
-  @if not $color{
+  @if not $color {
     @error "Shade `#{$shade}` not found in palette `#{$palette-name}`.";
   }
 
