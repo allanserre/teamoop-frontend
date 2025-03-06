@@ -76,6 +76,7 @@ jobs:
           install: false
 
       - name: Copy reports files
+        continue-on-error: true
         run: cp -r cypress/videos mochawesome-report/videos
 
       - name: Save Cypress Report

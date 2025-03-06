@@ -1,0 +1,40 @@
+.top-bar{
+    backdrop-filter: blur(10px);
+    width: 100%;
+    padding: 16px 108px;
+    align-content: center;
+    display: flex;
+    top: 0;
+    position: fixed;
+    
+
+    .logo{
+        cursor: pointer;
+        margin-right: 50px;
+    }
+
+    .search-bar{
+        border-radius: 8px;
+        background: #CDE1E4;
+        width: 40%;
+        padding: 0 16px;
+        border: none;
+        font-family: var(--font-montserrat);
+        font-size: 16px;
+
+        ::placeholder{
+            font-weight: 600;
+        }
+    }
+
+    .buttons{
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        :last-child{
+            margin-left: 20px;
+        }
+    }
+}
