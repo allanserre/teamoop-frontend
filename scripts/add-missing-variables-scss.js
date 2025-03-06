@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const scssFilePath = path.resolve(__dirname, '../src/styles/variables.scss');
+const scssFilePath = path.resolve(__dirname, '../src/styles/_variables.scss');
 
 function extractVariables(content) {
   const variableRegex = /\$([-\w]+):/g;

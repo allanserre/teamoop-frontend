@@ -152,14 +152,14 @@ import 'cypress-real-events';
 
 ### Gestion des variables SCSS pour les tests visuels
 
-Le fichier `variables.json` contient toutes les variables SCSS extraites du fichier `variables.scss` de votre projet. Pour maintenir la cohérence entre SCSS et les tests Cypress :
+Le fichier `variables.json` contient toutes les variables SCSS extraites du fichier `_variables.scss` de votre projet. Pour maintenir la cohérence entre SCSS et les tests Cypress :
 
-1. Ajoutez toutes nouvelles variables dans `variables.scss`.
+1. Ajoutez toutes nouvelles variables dans `_variables.scss`.
 2. Ne les incluez pas manuellement dans `:root`, le script s'en charge automatiquement.
 
 ### Mise à jour du fichier JSON des variables
 
-Lorsque vous modifiez le fichier `variables.scss`, regénérez le fichier JSON correspondant en exécutant :
+Lorsque vous modifiez le fichier `_variables.scss`, regénérez le fichier JSON correspondant en exécutant :
 
 ```bash
 npm run build:variables

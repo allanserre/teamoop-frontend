@@ -15,7 +15,7 @@
     "watch": "ng build --watch --configuration development",
     "cypress:open": "npx cypress open",
     "cypress:run": "npx cypress run",
-    "build:variables": "node scripts/add-missing-variables-scss.js && sass --no-source-map src/styles/variables.scss temp/variables.css && node scripts/convert-css-to-json.js"
+    "build:variables": "node scripts/add-missing-variables-scss.js && sass --no-source-map src/styles/_variables.scss temp/variables.css && node scripts/convert-css-to-json.js"
   },
   "private": true,
   "dependencies": {
