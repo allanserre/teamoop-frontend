@@ -23,8 +23,8 @@ function addMissingVariables(content) {
     const cssVarName = varName.replace(/_/g, '-');
     if (!rootVars.includes(cssVarName)) {
       newVars += `  --${cssVarName}: #{$${varName}};`;
-      if ( index < declaredVars.length - 1 ) {
-        newVars += "\n";
+      if (index < declaredVars.length - 1) {
+        newVars += '\n';
       }
       changesMade = true;
     }

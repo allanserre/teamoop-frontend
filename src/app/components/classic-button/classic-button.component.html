@@ -1,7 +1,3 @@
-<button
-  [ngClass]="buttonClassList()"
-  [disabled]="this.disabled()"
-  [attr.aria-disabled]="this.disabled()"
->
+<button [ngClass]="buttonClassList()" [disabled]="this.disabled()" [attr.aria-disabled]="this.disabled()">
   <ng-content></ng-content>
 </button>

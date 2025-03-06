@@ -1,21 +1,22 @@
 @use '@angular/material' as mat;
 @use 'theme' as theme;
-@import "font";
-@import "variables";
+@import 'font';
+@import 'variables';
 @include mat.core;
 
-
 // Define the theme object.
-$teamoop-frontend-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
-  ),
-  density: (
-    scale: 0,
+$teamoop-frontend-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    density: (
+      scale: 0,
+    ),
   )
-));
+);
 
 :root {
   @include mat.all-component-themes($teamoop-frontend-theme);
@@ -27,11 +28,18 @@ $teamoop-frontend-theme: mat.define-theme((
   box-sizing: border-box;
 }
 
-p,h1,h2,h3,h4,h5,h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 

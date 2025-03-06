@@ -7,7 +7,7 @@ import { ButtonColor } from './button.type';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './classic-button.component.html',
-  styleUrl: './classic-button.component.scss'
+  styleUrl: './classic-button.component.scss',
 })
 export class ClassicButtonComponent implements AfterContentInit {
   color = input<ButtonColor>('primary');
@@ -17,10 +17,7 @@ export class ClassicButtonComponent implements AfterContentInit {
   clicked = output<void>();
   hasIcon = signal(false);
 
-  buttonClassList = computed(() => [
-    this.color(),
-    this.filled() ? 'filled' : 'outlined'
-  ]);
+  buttonClassList = computed(() => [this.color(), this.filled() ? 'filled' : 'outlined']);
 
   constructor(private elementRef: ElementRef) {}
 
@@ -56,5 +53,4 @@ export class ClassicButtonComponent implements AfterContentInit {
       this.clicked.emit();
     }
   }
-
 }

@@ -14,7 +14,7 @@ function extractCssVariables(css) {
 
   // Recherche de toutes les variables CSS dans le fichier
   while ((matches = regex.exec(css)) !== null) {
-    const [ , name, value ] = matches;
+    const [, name, value] = matches;
     variables[name.trim()] = value.trim();
   }
 
