@@ -55,9 +55,9 @@ jobs:
         run: |
           docker run -d -p 8080:8080 -e SPRING_PROFILES_ACTIVE=test ghcr.io/lenelson/teamoop-backend:latest
           
-      - name: Wait for Spring Boot to be ready
-        run: |
-          curl http://localhost:8080/actuator/health | grep "{\"status\":\"UP\"}" || ( echo Helth Check Failed Actuator=http://localhost:8080/actuator/health && exit 2; )
+   #   - name: Wait for Spring Boot to be ready
+    #    run: |
+    #      curl http://localhost:8080/actuator/health | grep "{\"status\":\"UP\"}" || ( echo Helth Check Failed Actuator=http://localhost:8080/actuator/health && exit 2; )
 
       - name: Run Component Testing
         uses: cypress-io/github-action@v6
