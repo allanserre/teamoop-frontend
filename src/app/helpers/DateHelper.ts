@@ -30,8 +30,7 @@ export class DateHelper {
     }
   }
 
-  private static plural(val : number): string {
+  private static plural(val: number): string {
     return val > 1 ? 's' : '';
   }
 }
-

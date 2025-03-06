@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {DateHelper} from '../helpers/DateHelper';
+import { DateHelper } from '../helpers/DateHelper';
 
 @Pipe({
   name: 'elapsedTime',

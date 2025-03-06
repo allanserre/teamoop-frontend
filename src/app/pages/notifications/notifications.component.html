@@ -1,0 +1,5 @@
+<div style="display: flex; justify-content: center; flex-direction: column; padding: 18px; gap: 12px">
+  @for (notification of notifications(); track notification.id) {
+    <app-notification-row [notification]="notification"> </app-notification-row>
+  }
+</div>

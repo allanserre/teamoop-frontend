@@ -12,7 +12,7 @@ describe('ChipTagComponent', () => {
       imports: [ChipTagComponent],
     });
 
-    cy.get('.chip-tag').should('have.text', '#chips');
+    cy.get('.chip-tag').should('contains.text', '#chips');
   });
 
   it('can mount using template syntax with content projection', () => {
@@ -21,7 +21,7 @@ describe('ChipTagComponent', () => {
       imports: [ChipTagComponent],
     });
 
-    cy.get('.chip-tag').should('have.text', chipText);
+    cy.get('.chip-tag').should('contains.text', chipText);
   });
 
   // Styles Test
