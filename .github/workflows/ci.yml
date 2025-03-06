@@ -57,12 +57,7 @@ jobs:
           
       - name: Wait for Spring Boot to be ready
         run: |
-          echo "Waiting for Spring Boot service to be ready..."
-          until curl -sf http://localhost:8080/actuator/health ; do
-            echo "Spring Boot service not ready yet..."
-            sleep 5
-          done
-          echo "Spring Boot service is ready!"
+          curl http://localhost:8080/actuator/health | grep "{\"status\":\"UP\"}" || ( echo Helth Check Failed Actuator=http://localhost:8080/actuator/health && exit 2; )
 
       - name: Run Component Testing
         uses: cypress-io/github-action@v6
