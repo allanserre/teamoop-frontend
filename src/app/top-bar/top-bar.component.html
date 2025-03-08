@@ -1,9 +1,14 @@
 <div class="top-bar">
-    <img class="logo" src="/images/svg/logo.svg" alt="logo" routerLink="/" routerLinkActive="active" />
-    <input class="search-bar" type="search" placeholder="Rechercher un projet" />
-
-    <div class="buttons">
-        <app-classic-button>Publier un projet</app-classic-button>
-        <app-classic-button>Se connecter</app-classic-button>
+  <div class="wide-container">
+    <div class="left-side">
+      <div class="logo">
+        <app-svg-file svgSrc="assets/images/svg/logo.svg"></app-svg-file>
+      </div>
+      <input class="search-bar" type="search" placeholder="Rechercher un projet" />
     </div>
+    <div class="buttons">
+      <app-classic-button>Publier un projet</app-classic-button>
+      <app-classic-button>Se connecter</app-classic-button>
+    </div>
+  </div>
 </div>

@@ -20,7 +20,7 @@ $teamoop-frontend-theme: mat.define-theme(
 
 :root {
   @include mat.all-component-themes($teamoop-frontend-theme);
-  
+
   --font-montserrat: 'Montserrat';
 }
 
@@ -38,6 +38,11 @@ h6 {
   margin: 0;
 }
 
+h2 {
+  font-size: 32px;
+  font-weight: $font-weight-extrabold;
+}
+
 html,
 body {
   height: 100%;
@@ -47,7 +52,7 @@ body {
   margin: 0;
   font-family: var(--font-montserrat);
   font-weight: $font-weight;
-  background-image: url('public/images/svg/background.svg');
+  background-color: $background-surface-color;
 }
 
 button {
@@ -60,4 +65,10 @@ em {
 
 strong {
   font-weight: 900;
+}
+
+.wide-container {
+  width: 1660px;
+  margin: 0 auto;
+  padding: 0 20px;
 }

@@ -1,6 +1,15 @@
 <div class="container">
-    <div class="content">
-        <div class="hook">Phrase D'accroche</div>
-        <img src="images/svg/accueil-pot-de-fleur.svg" alt="accueil-pot-de-fleur"/>
+  <section class="content">
+    <div class="info-wrapper wide-container">
+      <div class="hook">Une plateforme de projets collaboratif rien que pour vous !</div>
+      <app-svg-file width="800px" height="800px" svgSrc="assets/images/svg/accueil-pot-de-fleur.svg"></app-svg-file>
     </div>
+  </section>
+  <section class="colored-section"></section>
 </div>
+<section class="wide-container most-recent-projects-section">
+  <div class="last-project-section">
+    <h2>Les derniers projets</h2>
+  </div>
+  <app-project-list [projects]="mostRecentProjects()"> </app-project-list>
+</section>

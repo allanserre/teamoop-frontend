@@ -7,6 +7,7 @@
 $font-family: 'Montserrat', sans-serif;
 $font-weight: 400;
 $font-weight-semibold: 600;
+$font-weight-extrabold: 900;
 $regular-font-size: 16px;
 
 // ====================================================== //
@@ -23,6 +24,8 @@ $outline-color: rgba(theme.get-color(primary, 950), 0.25);
 $hover-color: rgba(theme.get-color(primary, 950), 0.15);
 $text-color: theme.get-color(dark, 500);
 $background-surface-color: theme.get-color(primary, 50);
+$background-secondary-surface-color: theme.get-color(dark, 500);
+$text-color-on-secondary-surface: theme.get-color(gray, 50);
 
 // ====================================================== //
 //              COMPONENT STYLES VARIABLES                //

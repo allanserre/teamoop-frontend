@@ -2,10 +2,11 @@
 @import 'variables';
 
 .card-container {
+  cursor: pointer;
   position: relative;
-  width: 330px;
   min-height: max-content;
-  margin: 32px;
+  width: 100%;
+  height: 100%;
   font-family: $font-family;
   font-weight: $font-weight;
 }
@@ -14,13 +15,12 @@
   position: relative;
   background-color: theme.get-color(gray, 100);
   padding: 24px;
+  height: 100%;
   border-radius: 8px;
   z-index: 2;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 312px;
-  height: 193px;
 }
 
 .project-title {
@@ -42,9 +42,9 @@
 .back-card-dark {
   position: absolute;
   align-items: center;
-  width: 312px;
-  height: 188px;
   top: 0;
+  height: 100%;
+  width: 100%;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
   transform-origin: center;
