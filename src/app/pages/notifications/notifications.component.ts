@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { AppNotification, NotificationType } from '@models/notification.model';
-import { NotificationRowComponent } from '../../components/notifications/notification-row/notification-row.component';
+import { NotificationRowComponent } from '@components/notifications/notification-row/notification-row.component';
 import { NotificationService } from '@services/notifications.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 

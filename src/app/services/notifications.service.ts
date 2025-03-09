@@ -14,15 +14,15 @@ export class NotificationService {
 
   private http: HttpClient = inject(HttpClient);
 
-  private _notificationsSubject: BehaviorSubject<AppNotification[]> = new BehaviorSubject<AppNotification[]>([]);
-  public notifications$ = this._notificationsSubject.asObservable();
+  private notificationsSubject: BehaviorSubject<AppNotification[]> = new BehaviorSubject<AppNotification[]>([]);
+  public notifications$ = this.notificationsSubject.asObservable();
 
-  fetchNotifications(mock : boolean = true) {
+  fetchNotifications(mock: boolean = true) {
     if (this.mockEnv && mock) {
-      this._notificationsSubject.next(NotificationsMock);
+      this.notificationsSubject.next(NotificationsMock);
     } else {
       this.http.get<AppNotification[]>(`${this.apiUrl}/api/notifications`).subscribe(notifications => {
-        this._notificationsSubject.next(notifications);
+        this.notificationsSubject.next(notifications);
       });
     }
   }

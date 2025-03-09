@@ -16,12 +16,8 @@ export class TopBarComponent {
   private router = inject(Router);
 
   constructor() {
-    console.log(this.router.url);
-
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        console.log(event.url);
-
         this.showBackdrop.set(event.url === '/');
       }
     });
