@@ -16,7 +16,7 @@
       <span> {{ notification().message }}</span>
     </div>
   </div>
-  <div class="elapsed-time">{{ notification().createdAt | elapsedTime }}</div>
+  <div class="elapsed-time">{{ notification().createdAt.toLocaleString() | elapsedTime }}</div>
   <div class="bottom-row">
     <app-classic-button color="black" (clicked)="showDetails.emit()"> Voir </app-classic-button>
   </div>

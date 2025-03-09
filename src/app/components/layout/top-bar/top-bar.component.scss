@@ -1,8 +1,5 @@
 .top-bar {
-  &.backdrop {
-    backdrop-filter: blur(10px);
-  }
-
+  backdrop-filter: blur(10px);
   width: 100%;
   padding: 16px 108px;
   align-content: center;

@@ -9,21 +9,22 @@ import { NotificationsMock } from './mock/notifications.mock';
   providedIn: 'root',
 })
 export class NotificationService {
-  private apiUrl = environment.apiUrl;
-  private mockEnv = environment.apiUrl;
-
   private http: HttpClient = inject(HttpClient);
 
   private notificationsSubject: BehaviorSubject<AppNotification[]> = new BehaviorSubject<AppNotification[]>([]);
   public notifications$ = this.notificationsSubject.asObservable();
 
   fetchNotifications(mock: boolean = true) {
-    if (this.mockEnv && mock) {
-      this.notificationsSubject.next(NotificationsMock);
+    if (environment.mock && mock) {
+      this.notificationsSubject.next(this.sortNotifications(NotificationsMock));
     } else {
-      this.http.get<AppNotification[]>(`${this.apiUrl}/api/notifications`).subscribe(notifications => {
-        this.notificationsSubject.next(notifications);
+      this.http.get<AppNotification[]>(`${environment.apiUrl}/api/notifications`).subscribe(notifications => {
+        this.notificationsSubject.next(this.sortNotifications(notifications));
       });
     }
+  }
+
+  private sortNotifications(notifications: AppNotification[]) {
+    return notifications.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
   }
 }

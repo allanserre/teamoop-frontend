@@ -18,8 +18,6 @@ export class NotificationRowComponent {
 
   private router = inject(Router);
 
-  constructor() {}
-
   navigateToUserProfil() {
     this.router.navigate(['/profile', { id: this.notification().userId }]);
   }

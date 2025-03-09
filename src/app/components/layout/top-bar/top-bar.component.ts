@@ -10,16 +10,4 @@ import { ClassicButtonComponent } from '@components/classic-button/classic-butto
   styleUrl: './top-bar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TopBarComponent {
-  showBackdrop = signal(false);
-
-  private router = inject(Router);
-
-  constructor() {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationStart) {
-        this.showBackdrop.set(event.url === '/');
-      }
-    });
-  }
-}
+export class TopBarComponent {}

@@ -2,7 +2,7 @@ export interface AppNotification {
   id: number;
   userId: number;
   isRead: boolean;
-  createdAt: string;
+  createdAt: Date;
   type: NotificationType;
   message: string;
 }
