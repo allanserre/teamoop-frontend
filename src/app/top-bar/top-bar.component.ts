@@ -7,6 +7,6 @@ import { ClassicButtonComponent } from '@components/classic-button/classic-butto
   standalone: true,
   imports: [ClassicButtonComponent, RouterLink],
   templateUrl: './top-bar.component.html',
-  styleUrl: './top-bar.component.scss'
+  styleUrl: './top-bar.component.scss',
 })
 export class TopBarComponent {}

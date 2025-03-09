@@ -20,7 +20,7 @@ $teamoop-frontend-theme: mat.define-theme(
 
 :root {
   @include mat.all-component-themes($teamoop-frontend-theme);
-  
+
   --font-montserrat: 'Montserrat';
 }
 
