@@ -2,6 +2,7 @@
   "extends": "stylelint-config-standard-scss",
   "rules": {
     "unit-allowed-list": ["%", "deg", "px", "rem", "ms", "s"],
-    "no-empty-source": null
+    "no-empty-source": null,
+    "shorthand-property-no-redundant-values": null
   }
 }

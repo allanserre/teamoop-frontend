@@ -6,7 +6,9 @@
 
 $font-family: 'Montserrat', sans-serif;
 $font-weight: 400;
+$font-weight-light: 300;
 $font-weight-semibold: 600;
+$font-weight-bold: 700;
 $regular-font-size: 16px;
 
 // ====================================================== //
@@ -14,6 +16,7 @@ $regular-font-size: 16px;
 // ====================================================== //
 
 $border-width: 1px;
+$border-radius-small: 8px;
 
 // ====================================================== //
 //                    COLOR VARIABLES                     //
@@ -23,6 +26,8 @@ $outline-color: rgba(theme.get-color(primary, 950), 0.25);
 $hover-color: rgba(theme.get-color(primary, 950), 0.15);
 $text-color: theme.get-color(dark, 500);
 $background-surface-color: theme.get-color(primary, 50);
+$background-notification-color: theme.get-color(primary, 100);
+$background-notification-unread-color: theme.get-color(primary, 200);
 
 // ====================================================== //
 //              COMPONENT STYLES VARIABLES                //
@@ -69,4 +74,12 @@ $chip-tag-orange-color: theme.get-color(orange, 500);
   --chip-tag-light-blue-color: #{$chip-tag-light-blue-color};
   --chip-tag-orange-color: #{$chip-tag-orange-color};
   --chip-tag-opacity: #{$chip-tag-opacity};
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+  --regular-font-size: #{$regular-font-size};
+  --border-width: #{$border-width};
+  --border-radius-small: #{$border-radius-small};
+  --background-notification-color: #{$background-notification-color};
+  --background-notification-unread-color: #{$background-notification-unread-color};
 }

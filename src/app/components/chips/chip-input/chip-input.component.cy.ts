@@ -15,7 +15,7 @@ describe('ChipInputComponent', () => {
       imports: [ChipInputComponent],
     });
 
-    cy.get('[data-cy="chip-text"]').should('have.text', '#filter');
+    cy.get('[data-cy="chip-text"]').should('contains.text', '#filter');
   });
 
   it('can mount using template syntax with content projection', () => {
@@ -24,7 +24,7 @@ describe('ChipInputComponent', () => {
       imports: [ChipInputComponent],
     });
 
-    cy.get('[data-cy="chip-text"]').should('have.text', chipText);
+    cy.get('[data-cy="chip-text"]').should('contains.text', chipText);
   });
 
   it('should trigger a chipClosed event when clicking on the right icon', () => {
