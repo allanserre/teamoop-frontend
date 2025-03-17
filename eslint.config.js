@@ -34,6 +34,7 @@ module.exports = tseslint.config(
       ],
       'no-empty-function': 'off',
       '@typescript-eslint/no-empty-function': 'off',
+      '@typescript-eslint/no-inferrable-types': 'off',
     },
   },
   {

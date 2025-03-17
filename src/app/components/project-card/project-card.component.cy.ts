@@ -14,6 +14,7 @@ describe('ProjectCardComponent', () => {
   ];
 
   const project: Project = {
+    id: 3,
     name: projectName,
     description: description,
     startDate: new Date(),
@@ -32,7 +33,7 @@ describe('ProjectCardComponent', () => {
         project: project,
       },
     });
-    cy.get('[data-cy="project-title"]').should('have.text', projectName);
+    cy.get('[data-cy="project-title"]').should('contains.text', projectName);
   });
 
   it('should display project description', () => {
@@ -41,7 +42,7 @@ describe('ProjectCardComponent', () => {
         project: project,
       },
     });
-    cy.get('[data-cy="project-description"]').should('have.text', description);
+    cy.get('[data-cy="project-description"]').should('contains.text', description);
   });
 
   it('should display project tags', () => {

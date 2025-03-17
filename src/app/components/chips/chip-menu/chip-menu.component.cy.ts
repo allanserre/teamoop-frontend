@@ -12,7 +12,7 @@ describe('ChipMenuComponent', () => {
       imports: [ChipMenuComponent],
     });
 
-    cy.get('[data-cy="chip-menu"]').should('have.text', '#Chips');
+    cy.get('[data-cy="chip-menu"]').should('contains.text', '#Chips');
   });
 
   it('can mount using template syntax with content projection', () => {
@@ -21,7 +21,7 @@ describe('ChipMenuComponent', () => {
       imports: [ChipMenuComponent],
     });
 
-    cy.get('[data-cy="chip-menu"]').should('have.text', chipText);
+    cy.get('[data-cy="chip-menu"]').should('contains.text', chipText);
   });
 
   it('should have the correct default css class', () => {

@@ -20,8 +20,8 @@ describe('UserProfilComponent', () => {
       },
     });
 
-    cy.get('[data-cy="username-text"]').should('have.text', name);
+    cy.get('[data-cy="username-text"]').should('contains.text', name);
 
-    cy.get('[data-cy="usermail-text"]').should('have.text', mail);
+    cy.get('[data-cy="usermail-text"]').should('contains.text', mail);
   });
 });

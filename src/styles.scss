@@ -55,6 +55,10 @@ body {
   background-color: $background-surface-color;
 }
 
+i {
+  display: flex;
+}
+
 button {
   all: unset;
 }
@@ -68,7 +72,8 @@ strong {
 }
 
 .wide-container {
-  width: 1660px;
+  width: 100%;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 20px;
 }

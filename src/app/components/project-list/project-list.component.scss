@@ -1,11 +1,10 @@
 .project-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: minmax(240px, auto);
   gap: 24px;
 
   .project-container {
-    flex: 1 1 calc(25% - 24px);
-    max-width: calc(25% - 24px);
-    min-height: 240px;
+    grid-column: auto / span 3;
   }
 }
