@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ChipMenuComponent } from '@components/chips/chip-menu/chip-menu.component';
 import { ChipTagComponent } from '@components/chips/chip-tag/chip-tag.component';
-import { TopBarComponent } from '../../top-bar/top-bar.component';
+import { TopBarComponent } from '@components/layout/top-bar/top-bar.component';
 
 interface MenuItem {
   libelle: string;

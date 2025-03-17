@@ -8,15 +8,15 @@ services:
       - SPRING_PROFILES_ACTIVE=test
     networks:
       - teamoop-network
-      
+
   redis:
     image: redis:7.4.2
     container_name: redis
     ports:
-      - "6379:6379"
+      - '6379:6379'
     networks:
       - teamoop-network
-    command: ["redis-server", "--appendonly", "yes", "--requirepass", "password"]
+    command: ['redis-server', '--appendonly', 'yes', '--requirepass', 'password']
 
 networks:
   teamoop-network:

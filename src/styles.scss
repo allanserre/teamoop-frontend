@@ -47,7 +47,10 @@ body {
   margin: 0;
   font-family: var(--font-montserrat);
   font-weight: $font-weight;
-  background-image: url('public/images/svg/background.svg');
+}
+
+i {
+  display: flex;
 }
 
 button {

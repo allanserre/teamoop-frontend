@@ -60,23 +60,89 @@ docker-compose up
 
 Cela démarrera le service API défini dans le fichier `docker-compose.yml` du projet backend.
 
-## Structure du projet
+## Structure du Projet
 
-### `services/`
+### Aperçu du Répertoire
 
-Contient tous les services utilisés pour la communication avec l'API backend.
+```
 
-### `pages/`
 
-Contient les composants principaux de l'application (ex. page principale, connexion, etc.).
+├── app
+│   ├── components
+│   │   ├── chips
+│   │   │   ├── chip-input        # Composant pour les chips input : https://m3.material.io/components/chips/specs#facb7c02-74c4-4b81-bd52-6ad10ce351eb
+│   │   │   ├── chip-menu         # Chips plus large pour l'affichage de bouton de menu
+│   │   │   └── chip-tag          # Chip permettant de tagger un élément
+│   │   ├── classic-button        # Bouton standard réutilisable et customisable
+│   │   ├── layout                # Composant permettant la gestion de la mise en page et les éléments communs au différentes pages
+│   │   │   ├── default-page-wrapper # Wrapper pour les pages avec mise en page par défaut
+│   │   │   └── top-bar              # Composant du haut du site
+│   │   ├── notifications
+│   │   │   └── notification-row  # Composant pour afficher une notification unique
+│   │   ├── project-card          # Composant de carte pour l'affichage des projets
+│   │   └── user-profil           # Composant lié au profil utilisateur
+│   ├── helpers
+│   ├── models
+│   ├── pages
+│   │   ├── home                  # Composant de la page d'accueil
+│   │   └── notifications         # Composant de la page des notifications
+│   ├── pipes
+│   └── services
+│       └── mock                  # Fichier objet permettant d'insérer des données de mock dans les sevices
+├── environments
+│── styles
+├── cypress
+│   ├── downloads                  # Répertoire pour les fichiers téléchargés
+│   ├── e2e                        # Tests end-to-end (E2E)
+│   ├── fixtures                   # Données de test simulées
+│   ├── screenshots                # Images générés suite à un échec de test sur un composant
+│   └── support                     # Fichiers de support pour les tests
+```
 
-### `components/`
+## Description
 
-Inclut les sous-composants et les composants réutilisables.
+- **`app/components/`** : Contient les composants UI réutilisables comme les boutons, wrappers de mise en page et notifications.
+- **`app/helpers/`** : Fonctions utilitaires pour assister la logique de l'application.
+- **`app/models/`** : Interfaces et modèles TypeScript utilisés dans l'application.
+- **`app/pages/`** : Contient les composants de pages définissant les principales vues de l'application.
+- **`app/pipes/`** : Pipes Angular personnalisés pour transformer les données dans les templates.
+- **`app/services/`** : Contient les services pour la communication avec l'API et la gestion des données.
+- **`environments/`** : Fichiers de configuration pour différents environnements (ex. développement, production).
+- **`styles/`** : Styles globaux, gestion des thèmes et fichiers CSS/SCSS.
 
-### `models/`
+## Design System 
 
-Définit les interfaces et classes utilisées dans toute l'application.
+L'ensemble des composants du site sont référencé sur la route `http://localhost:4200/ui-design`
+
+Cette page met a disposition un page SandBox que vous pouvez utilisé pour le dévellopement de composants UX/UI
+
+Lors de l'ajout d'un nouveau composant vous pouvez l'ajouter à la liste de ceux existant parmis l'un des catégories à disposition ou
+si aucune catégorie ne convient en ajouter une :
+
+```typescript
+  private MENU_ITEMS: MenuItem[] = [
+    {
+      libelle: 'Chips',
+      code: 'chips',
+    },
+    ...
+    {
+      libelle: 'Layout',
+      code: 'layout',
+    },
+  ];
+```
+
+Puis on ajout la case et le template associé pour faciliter la lisibilité : 
+
+```angular17html
+@case ('layout') {
+  <div *ngTemplateOutlet="layout"></div>
+}
+<ng-template #layout>
+  <app-top-bar></app-top-bar>
+</ng-template>
+```
 
 ## Directives de codage
 
