@@ -38,6 +38,11 @@ h6 {
   margin: 0;
 }
 
+h2 {
+  font-size: 32px;
+  font-weight: $font-weight-extrabold;
+}
+
 html,
 body {
   height: 100%;
@@ -47,6 +52,7 @@ body {
   margin: 0;
   font-family: var(--font-montserrat);
   font-weight: $font-weight;
+  background-color: $background-surface-color;
 }
 
 i {
@@ -63,4 +69,11 @@ em {
 
 strong {
   font-weight: 900;
+}
+
+.wide-container {
+  width: 100%;
+  max-width: 1660px;
+  margin: 0 auto;
+  padding: 0 20px;
 }

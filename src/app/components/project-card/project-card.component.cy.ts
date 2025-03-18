@@ -14,6 +14,7 @@ describe('ProjectCardComponent', () => {
   ];
 
   const project: Project = {
+    id: 3,
     name: projectName,
     description: description,
     startDate: new Date(),
