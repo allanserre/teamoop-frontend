@@ -1,0 +1,88 @@
+<mat-sidenav-container class="page-container">
+  <mat-sidenav #sidenav opened mode="side" class="sidenav-container">
+    <mat-form-field class="search-field" appearance="outline">
+      <mat-label>Rechercher</mat-label>
+      <input matInput [(ngModel)]="searchInput" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <mat-nav-list>
+      <a mat-list-item [activated]="sandboxItem === currentPage()" (click)="onClickMenuItem(sandboxItem)">
+        <!--          <mat-icon matListItemIcon>{{item.icon}}</mat-icon>-->
+        <span>{{ sandboxItem.libelle }}</span>
+      </a>
+      @for (item of menuItems(); track $index) {
+        <a mat-list-item [activated]="item === currentPage()" (click)="onClickMenuItem(item)">
+          <!--          <mat-icon matListItemIcon>{{item.icon}}</mat-icon>-->
+          <span>{{ item.libelle }}</span>
+        </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    @switch (currentPage().code) {
+      @case ('buttons') {
+        <div *ngTemplateOutlet="buttons"></div>
+      }
+      @case ('cards') {
+        <div *ngTemplateOutlet="cards"></div>
+      }
+      @case ('chips') {
+        <div *ngTemplateOutlet="chips"></div>
+      }
+      @case ('sandbox') {
+        <div *ngTemplateOutlet="sandbox"></div>
+      }
+      @case ('layout') {
+        <div *ngTemplateOutlet="layout"></div>
+      }
+    }
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #sandbox> Sandbox </ng-template>
+
+<ng-template #cards>
+  <h2>Project Card</h2>
+  <app-project-card [project]="project()"></app-project-card>
+</ng-template>
+
+<ng-template #chips>
+  <h2>Input Chips</h2>
+  <div class="flex-container">
+    <app-chip-input></app-chip-input>
+    <app-chip-input>e-commerce</app-chip-input>
+  </div>
+  <h2>Menu Chips</h2>
+  <div class="flex-container">
+    <app-chip-menu></app-chip-menu>
+    <app-chip-menu [active]="true"></app-chip-menu>
+    <app-chip-menu [active]="true">Frontend</app-chip-menu>
+  </div>
+  <h2>Tags Chip</h2>
+  <div class="flex-container">
+    <app-chip-tag>tags</app-chip-tag>
+    <app-chip-tag color="orange">tags</app-chip-tag>
+    <app-chip-tag color="green">tags</app-chip-tag>
+    <app-chip-tag color="blue">tags</app-chip-tag>
+  </div>
+</ng-template>
+
+<ng-template #buttons>
+  <h2>Classic Buttons</h2>
+  <div class="flex-container">
+    <app-classic-button>Menu</app-classic-button>
+    <app-classic-button [filled]="false">Menu</app-classic-button>
+    <app-classic-button color="secondary">Menu</app-classic-button>
+    <app-classic-button color="secondary" [filled]="false">Menu</app-classic-button>
+    <app-classic-button color="secondary" [filled]="false" [disabled]="true">Menu</app-classic-button>
+    <app-classic-button color="black" [disabled]="true">Menu</app-classic-button>
+    <app-classic-button>
+      <mat-icon>settings</mat-icon>
+      Settings
+    </app-classic-button>
+  </div>
+</ng-template>
+
+<ng-template #layout>
+  <app-top-bar></app-top-bar>
+</ng-template>

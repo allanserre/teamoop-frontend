@@ -110,6 +110,40 @@ Cela démarrera le service API défini dans le fichier `docker-compose.yml` du p
 - **`environments/`** : Fichiers de configuration pour différents environnements (ex. développement, production).
 - **`styles/`** : Styles globaux, gestion des thèmes et fichiers CSS/SCSS.
 
+## Design System 
+
+L'ensemble des composants du site sont référencé sur la route `http://localhost:4200/ui-design`
+
+Cette page met a disposition un page SandBox que vous pouvez utilisé pour le dévellopement de composants UX/UI
+
+Lors de l'ajout d'un nouveau composant vous pouvez l'ajouter à la liste de ceux existant parmis l'un des catégories à disposition ou
+si aucune catégorie ne convient en ajouter une :
+
+```typescript
+  private MENU_ITEMS: MenuItem[] = [
+    {
+      libelle: 'Chips',
+      code: 'chips',
+    },
+    ...
+    {
+      libelle: 'Layout',
+      code: 'layout',
+    },
+  ];
+```
+
+Puis on ajout la case et le template associé pour faciliter la lisibilité : 
+
+```angular17html
+@case ('layout') {
+  <div *ngTemplateOutlet="layout"></div>
+}
+<ng-template #layout>
+  <app-top-bar></app-top-bar>
+</ng-template>
+```
+
 ## Directives de codage
 
 Ce projet est construit avec Angular 19 et suit les pratiques suivantes :
