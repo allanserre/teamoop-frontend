@@ -97,6 +97,7 @@ export class UiDesignComponent {
   ];
 
   project = signal({
+    id: 3,
     name: 'Description du projet',
     description: 'Nom du projet',
     startDate: new Date(),
