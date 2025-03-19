@@ -1,19 +1,22 @@
-import { Component, signal } from '@angular/core';
-import { MainService } from '../../services/main.service';
+import { Component, inject } from '@angular/core';
+import { SvgFileComponent } from '@components/svg-file/svg-file.component';
+import { ProjectListComponent } from '@components/project-list/project-list.component';
+import { ProjectService } from '@services/project.service';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-home',
-  imports: [],
   standalone: true,
+  imports: [SvgFileComponent, ProjectListComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  text = signal("");
+  private projectService = inject(ProjectService);
 
-  constructor(private service: MainService) {
-    this.service.getHelloWorld().subscribe(res => {
-      this.text.set(res);
-    })
+  mostRecentProjects = toSignal(this.projectService.projects$, { initialValue: [] });
+
+  constructor() {
+    this.projectService.fetchMostRecentProjects();
   }
 }

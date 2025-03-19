@@ -1,0 +1,49 @@
+@import 'variables';
+
+.container {
+  width: 100%;
+  max-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .content {
+    display: flex;
+    background-image: url('/public/images/svg/background.svg');
+    height: 80vh;
+
+    .info-wrapper {
+      margin: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      display: flex;
+
+      .hook {
+        flex-grow: 1;
+        max-height: 300px;
+        max-width: clamp(300px, 50%, 100%);
+        background: #dcecef;
+        border-radius: 8px;
+        padding: 32px;
+        font-size: clamp(24px, 2vw, 52px);
+        font-weight: 800;
+      }
+    }
+  }
+
+  .colored-section {
+    background-color: $background-secondary-surface-color;
+    height: 20vh;
+  }
+}
+
+.last-project-section {
+  margin-top: 72px;
+  margin-bottom: 32px;
+}
+
+.most-recent-projects-section {
+  margin-bottom: 72px;
+}

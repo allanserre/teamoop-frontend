@@ -1,0 +1,23 @@
+@use 'theme' as theme;
+@import 'variables';
+
+.chip-menu {
+  background-color: $background-surface-color;
+  color: theme.get-color(dark, 500);
+  padding: 12px 18px;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &.active {
+    background-color: $chip-menu-active-color;
+  }
+
+  &:hover:not(.active) {
+    background-color: $chip-menu-hover-color;
+  }
+}

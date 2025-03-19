@@ -1,0 +1,88 @@
+@use 'theme' as theme;
+
+// ====================================================== //
+//                     FONT VARIABLES                     //
+// ====================================================== //
+
+$font-family: 'Montserrat', sans-serif;
+$font-weight: 400;
+$font-weight-light: 300;
+$font-weight-semibold: 600;
+$font-weight-extrabold: 900;
+$font-weight-bold: 700;
+$regular-font-size: 16px;
+
+// ====================================================== //
+//                     SIZE VARIABLES                     //
+// ====================================================== //
+
+$border-width: 1px;
+$border-radius-small: 8px;
+
+// ====================================================== //
+//                    COLOR VARIABLES                     //
+// ====================================================== //
+
+$outline-color: rgba(theme.get-color(primary, 950), 0.25);
+$hover-color: rgba(theme.get-color(primary, 950), 0.15);
+$text-color: theme.get-color(dark, 500);
+$background-surface-color: theme.get-color(primary, 50);
+$background-secondary-surface-color: theme.get-color(dark, 500);
+$text-color-on-secondary-surface: theme.get-color(gray, 50);
+$background-notification-color: theme.get-color(primary, 100);
+$background-notification-unread-color: theme.get-color(primary, 200);
+
+// ====================================================== //
+//              COMPONENT STYLES VARIABLES                //
+// ====================================================== //
+
+// CHIP MENU
+
+$chip-menu-hover-color: theme.get-color(gray, 500);
+$chip-menu-active-color: theme.get-color(primary, 300);
+
+// CHIP-TAG
+
+$chip-tag-opacity: 0.16;
+$chip-tag-green-background: rgba(theme.get-color(green, 500), $chip-tag-opacity);
+$chip-tag-red-background: rgba(theme.get-color(red, 500), $chip-tag-opacity);
+$chip-tag-blue-background: rgba(theme.get-color(primary, 500), $chip-tag-opacity);
+$chip-tag-light-blue-background: rgba(theme.get-color(gray, 500), $chip-tag-opacity);
+$chip-tag-orange-background: rgba(theme.get-color(orange, 500), $chip-tag-opacity);
+$chip-tag-green-color: theme.get-color(green, 500);
+$chip-tag-red-color: theme.get-color(red, 500);
+$chip-tag-blue-color: theme.get-color(primary, 500);
+$chip-tag-light-blue-color: theme.get-color(gray, 500);
+$chip-tag-orange-color: theme.get-color(orange, 500);
+
+// ====================================================== //
+
+:root {
+  --font-family: #{$font-family};
+  --font-weight: #{$font-weight};
+  --outline-color: #{$outline-color};
+  --hover-color: #{$hover-color};
+  --text-color: #{$text-color};
+  --background-surface-color: #{$background-surface-color};
+  --chip-menu-hover-color: #{$chip-menu-hover-color};
+  --chip-menu-active-color: #{$chip-menu-active-color};
+  --chip-tag-green-background: #{$chip-tag-green-background};
+  --chip-tag-red-background: #{$chip-tag-red-background};
+  --chip-tag-blue-background: #{$chip-tag-blue-background};
+  --chip-tag-light-blue-background: #{$chip-tag-light-blue-background};
+  --chip-tag-orange-background: #{$chip-tag-orange-background};
+  --chip-tag-green-color: #{$chip-tag-green-color};
+  --chip-tag-red-color: #{$chip-tag-red-color};
+  --chip-tag-blue-color: #{$chip-tag-blue-color};
+  --chip-tag-light-blue-color: #{$chip-tag-light-blue-color};
+  --chip-tag-orange-color: #{$chip-tag-orange-color};
+  --chip-tag-opacity: #{$chip-tag-opacity};
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+  --regular-font-size: #{$regular-font-size};
+  --border-width: #{$border-width};
+  --border-radius-small: #{$border-radius-small};
+  --background-notification-color: #{$background-notification-color};
+  --background-notification-unread-color: #{$background-notification-unread-color};
+}
