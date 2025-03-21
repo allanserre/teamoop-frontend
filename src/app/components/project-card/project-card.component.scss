@@ -1,26 +1,26 @@
 @use 'theme' as theme;
-@import "variables";
+@import 'variables';
 
 .card-container {
+  cursor: pointer;
   position: relative;
-  width: 330px;
   min-height: max-content;
-  margin: 32px;
+  width: 100%;
+  height: 100%;
   font-family: $font-family;
   font-weight: $font-weight;
 }
 
 .card {
   position: relative;
-  background-color: theme.get-color(gray,100);
+  background-color: theme.get-color(gray, 100);
   padding: 24px;
+  height: 100%;
   border-radius: 8px;
   z-index: 2;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 312px;
-  height: 193px;
 }
 
 .project-title {
@@ -32,6 +32,7 @@
 .project-description {
   font-size: 14px;
   overflow: hidden;
+  margin-bottom: 16px;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -39,12 +40,12 @@
 }
 
 .back-card,
-.back-card-dark{
+.back-card-dark {
   position: absolute;
   align-items: center;
-  width: 312px;
-  height: 188px;
   top: 0;
+  height: 100%;
+  width: 100%;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
   transform-origin: center;
@@ -53,7 +54,7 @@
 }
 
 .back-card-dark {
-  background-color: theme.get-color(primary,700);
+  background-color: theme.get-color(primary, 700);
 
   .card-container:hover & {
     transform: rotate(-3.8deg);
@@ -62,15 +63,13 @@
 }
 
 .back-card {
-  background-color: theme.get-color(primary,500);
+  background-color: theme.get-color(primary, 500);
 
   .card-container:hover & {
     opacity: 1;
     transform: rotate(3.8deg);
   }
 }
-
-
 
 .card-chips {
   display: flex;

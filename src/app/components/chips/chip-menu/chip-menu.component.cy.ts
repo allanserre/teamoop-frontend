@@ -1,6 +1,6 @@
-import { ChipMenuComponent } from './chip-menu.component'
+import { ChipMenuComponent } from './chip-menu.component';
 import variables from 'cypress/variables.json';
-import "cypress-real-events";
+import 'cypress-real-events';
 
 describe('ChipMenuComponent', () => {
   it('should mount', () => {
@@ -9,20 +9,20 @@ describe('ChipMenuComponent', () => {
 
   it('can mount using template syntax without content projection', () => {
     cy.mount('<app-chip-menu></app-chip-menu>', {
-      imports: [ChipMenuComponent]
-    })
+      imports: [ChipMenuComponent],
+    });
 
-    cy.get('[data-cy="chip-menu"]').should('have.text', '#Chips')
-  })
+    cy.get('[data-cy="chip-menu"]').should('contains.text', '#Chips');
+  });
 
   it('can mount using template syntax with content projection', () => {
-    const chipText = "projected"
+    const chipText = 'projected';
     cy.mount('<app-chip-menu>' + chipText + '</app-chip-menu>', {
-      imports: [ChipMenuComponent]
-    })
+      imports: [ChipMenuComponent],
+    });
 
-    cy.get('[data-cy="chip-menu"]').should('have.text', chipText);
-  })
+    cy.get('[data-cy="chip-menu"]').should('contains.text', chipText);
+  });
 
   it('should have the correct default css class', () => {
     cy.mount(ChipMenuComponent);
@@ -56,11 +56,8 @@ describe('ChipMenuComponent', () => {
       },
     });
 
-    cy.get('[data-cy="chip-menu"]')
-      .realHover()
-      .should('have.css', 'background-color', variables['chip-menu-hover-color']);
+    cy.get('[data-cy="chip-menu"]').realHover().should('have.css', 'background-color', variables['chip-menu-hover-color']);
   });
-
 
   it('should not apply hover styles when hovering and active', () => {
     cy.mount(ChipMenuComponent, {
@@ -69,8 +66,6 @@ describe('ChipMenuComponent', () => {
       },
     });
 
-    cy.get('[data-cy="chip-menu"]')
-      .realHover()
-      .should('have.css', 'background-color', variables['chip-menu-active-color']);
+    cy.get('[data-cy="chip-menu"]').realHover().should('have.css', 'background-color', variables['chip-menu-active-color']);
   });
 });

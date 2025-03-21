@@ -3,7 +3,6 @@ import { ClassicButtonComponent } from './classic-button.component';
 import { TestBed } from '@angular/core/testing';
 
 describe('ClassicButtonComponent', () => {
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ClassicButtonComponent],
@@ -13,11 +12,7 @@ describe('ClassicButtonComponent', () => {
   it('should render the button with default properties', () => {
     cy.mount(ClassicButtonComponent);
 
-    cy.get('button')
-      .should('exist')
-      .and('have.class', 'primary')
-      .and('have.class', 'filled')
-      .and('not.be.disabled');
+    cy.get('button').should('exist').and('have.class', 'primary').and('have.class', 'filled').and('not.be.disabled');
   });
 
   it('should apply the correct classes based on inputs', () => {
@@ -28,10 +23,7 @@ describe('ClassicButtonComponent', () => {
       },
     });
 
-    cy.get('button')
-      .should('have.class', 'success')
-      .and('have.class', 'outlined')
-      .and('not.have.class', 'filled');
+    cy.get('button').should('have.class', 'success').and('have.class', 'outlined').and('not.have.class', 'filled');
   });
 
   it('should disable the button when disabled is true', () => {
@@ -41,9 +33,7 @@ describe('ClassicButtonComponent', () => {
       },
     });
 
-    cy.get('button')
-      .should('be.disabled')
-      .and('have.attr', 'aria-disabled', 'true');
+    cy.get('button').should('be.disabled').and('have.attr', 'aria-disabled', 'true');
   });
 
   it('should not disable the button when disabled is false', () => {
@@ -53,9 +43,7 @@ describe('ClassicButtonComponent', () => {
       },
     });
 
-    cy.get('button')
-      .should('not.be.disabled')
-      .and('have.attr', 'aria-disabled', 'false');
+    cy.get('button').should('not.be.disabled').and('have.attr', 'aria-disabled', 'false');
   });
 
   it('should not emit an event when disabled', () => {
@@ -76,5 +64,4 @@ describe('ClassicButtonComponent', () => {
     cy.wrap(fixture.nativeElement).find('button').click({ force: true });
     cy.get('@clickedSpy').should('not.have.been.called');
   });
-
 });

@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import { Component, input } from '@angular/core';
 
 export type ChipTagColor = 'red' | 'green' | 'orange' | 'blue' | 'light-blue';
 
@@ -7,7 +7,7 @@ export type ChipTagColor = 'red' | 'green' | 'orange' | 'blue' | 'light-blue';
   standalone: true,
   imports: [],
   templateUrl: './chip-tag.component.html',
-  styleUrl: './chip-tag.component.scss'
+  styleUrl: './chip-tag.component.scss',
 })
 export class ChipTagComponent {
   color = input<ChipTagColor>('blue');

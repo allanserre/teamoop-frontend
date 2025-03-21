@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const scssFilePath = path.resolve(__dirname, '../src/styles/variables.scss');
+const scssFilePath = path.resolve(__dirname, '../src/styles/_variables.scss');
 
 function extractVariables(content) {
   const variableRegex = /\$([-\w]+):/g;
@@ -23,8 +23,8 @@ function addMissingVariables(content) {
     const cssVarName = varName.replace(/_/g, '-');
     if (!rootVars.includes(cssVarName)) {
       newVars += `  --${cssVarName}: #{$${varName}};`;
-      if ( index < declaredVars.length - 1 ) {
-        newVars += "\n";
+      if (index < declaredVars.length - 1) {
+        newVars += '\n';
       }
       changesMade = true;
     }

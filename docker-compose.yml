@@ -3,20 +3,19 @@ services:
     image: ghcr.io/lenelson/teamoop-backend:latest
     container_name: teamoop-backend
     ports:
-      - "8080:8080"
+      - '8080:8080'
   redis:
     image: redis:7.4.2-alpine
     container_name: redis
     ports:
-      - "6379:6379"
+      - '6379:6379'
     networks:
       - teamoop-network
-    command: ["redis-server", "--appendonly", "yes", "--requirepass", "password"]
+    command: ['redis-server', '--appendonly', 'yes', '--requirepass', 'password']
 
 volumes:
   postgres-data:
     driver: local
-
 
 networks:
   teamoop-network:

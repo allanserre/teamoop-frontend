@@ -17,5 +17,13 @@
   "chip-tag-blue-color": "rgb(88, 164, 176)",
   "chip-tag-light-blue-color": "rgb(205, 225, 228)",
   "chip-tag-orange-color": "rgb(206, 132, 58)",
-  "chip-tag-opacity": "0.16"
+  "chip-tag-opacity": "0.16",
+  "font-weight-light": "300",
+  "font-weight-semibold": "600",
+  "font-weight-bold": "700",
+  "regular-font-size": "16px",
+  "border-width": "1px",
+  "border-radius-small": "8px",
+  "background-notification-color": "rgb(220, 236, 239)",
+  "background-notification-unread-color": "rgb(186, 217, 222)"
 }
