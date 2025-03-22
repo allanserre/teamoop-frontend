@@ -25,7 +25,7 @@ $border-radius-small: 8px;
 
 $outline-color: rgba(theme.get-color(primary, 950), 0.25);
 $hover-color: rgba(theme.get-color(primary, 950), 0.15);
-$text-color: theme.get-color(dark, 500);
+$text-color: theme.get-color(dark, 900);
 $background-surface-color: theme.get-color(primary, 50);
 $background-secondary-surface-color: theme.get-color(dark, 500);
 $text-color-on-secondary-surface: theme.get-color(gray, 50);
@@ -56,9 +56,10 @@ $chip-tag-light-blue-color: theme.get-color(gray, 500);
 $chip-tag-orange-color: theme.get-color(orange, 500);
 
 // INPUTS
-$input-background-color: theme.get-color(gray,500);
+$input-background-color: $background-surface-color;
+$input-outline-color: theme.get-color(gray, 300);
 $input-border-radius: 4px;
-$placeholder-text-color: theme.get-color(primary,300);
+$placeholder-text-color: theme.get-color(primary, 300);
 
 // ====================================================== //
 

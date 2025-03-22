@@ -1,0 +1,10 @@
+<label class="checkbox-wrapper" [class.disabled]="disabled()">
+  <input type="checkbox" [(ngModel)]="checked" [disabled]="disabled()" />
+  <span class="checkbox-box">
+    @if (checked()) {
+      <svg class="check-icon" viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    }
+  </span>
+</label>

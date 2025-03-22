@@ -1,15 +1,11 @@
 @use 'theme' as theme;
 @import 'variables';
 
-.input-container {
-  position: relative;
-  display: flex;
-}
-
 .input {
+  width: 100%;
   border-radius: $input-border-radius;
   border: none;
-  padding: 6px 12px;
+  padding: 16px;
   outline: $border-width solid $input-outline-color;
   background-color: $input-background-color;
   color: $text-color;

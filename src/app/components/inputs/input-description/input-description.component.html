@@ -1,4 +1,16 @@
-<div class="input-container">
-    <label data-cy="label" class="label" for="">{{ label }}</label>
-    <textarea data-cy="input" class="input" type="text" placeholder="{{ placeholder }}" name="" id=""></textarea>
+<div class="side-preview-duo" appResizable>
+  <div class="textarea-container">
+    <app-input-textarea height="100%" class="input-textarea" [resizable]="false" [(value)]="value" [placeholder]="placeholder()"></app-input-textarea>
+    <div class="label-indicator-markdown">
+      <app-chip-tag color="blue">Code</app-chip-tag>
+    </div>
+  </div>
+  <div class="markdown-container">
+    <div class="label-indicator-markdown">
+      <app-chip-tag color="red">Markdown</app-chip-tag>
+    </div>
+    <div class="scrollable-container">
+      <markdown [data]="value()"></markdown>
+    </div>
+  </div>
 </div>

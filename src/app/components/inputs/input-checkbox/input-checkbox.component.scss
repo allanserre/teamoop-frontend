@@ -1,0 +1,77 @@
+@use 'theme' as theme;
+@import 'variables';
+
+$checkbox-size: 24px;
+$checkbox-border-radius: 8px;
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+
+  input {
+    display: none;
+  }
+
+  .checkbox-box {
+    width: $checkbox-size;
+    height: $checkbox-size;
+    border-radius: 8px;
+    background-color: $background-surface-color;
+    border: $border-width solid theme.get-color(primary, 500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .check-icon {
+    width: 18px;
+    height: 18px;
+    color: white;
+  }
+
+  .checkbox-box {
+    stroke: #f9f9f9;
+    stroke-dasharray: 25;
+    stroke-dashoffset: -25;
+    stroke-linecap: round;
+    stroke-width: 0.2em;
+    border-radius: 6px;
+    fill: none;
+    transition:
+      background 0.2s,
+      stroke-dashoffset 0.4s;
+  }
+
+  input:checked + .checkbox-box {
+    background: theme.get-color(primary, 500);
+    stroke-dashoffset: 0;
+  }
+
+  .checkbox-label {
+    margin-left: 8px;
+    color: #333;
+  }
+
+  &.disabled {
+    cursor: default;
+
+    input:checked + .checkbox-box {
+      background: theme.get-color(gray, 300) !important;
+    }
+    .checkbox-box {
+      border-color: theme.get-color(gray, 300) !important;
+    }
+
+    .checkbox-label {
+      color: theme.get-color(gray, 50);
+    }
+  }
+}

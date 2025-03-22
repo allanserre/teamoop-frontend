@@ -1,0 +1,22 @@
+<div class="segmented-button-container">
+  @for (button of buttons(); track button; let first = $first; let last = $last; let index = $index) {
+    <button
+      (click)="buttonSelected(index)"
+      class="segmented-button"
+      [class.first]="first"
+      [class.last]="last"
+      [class.middle]="!first && !last"
+      [class.selected]="index === selectedIndex()">
+      @if (index === selectedIndex()) {
+        <svg class="check-icon" viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      } @else {
+        @if (button.icon) {
+          <i [ngClass]="'fa-solid ' + button.icon"></i>
+        }
+      }
+      {{ button.label }}
+    </button>
+  }
+</div>

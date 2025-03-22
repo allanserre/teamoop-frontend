@@ -1,6 +1,12 @@
 .page-container {
   height: 100%;
 
+  .sandbox-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
   .flex-container {
     display: flex;
     flex-wrap: wrap;
