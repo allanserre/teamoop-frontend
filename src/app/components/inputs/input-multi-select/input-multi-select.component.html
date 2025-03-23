@@ -1,7 +1,7 @@
 <div class="input-multi-select-container" (click)="inputFocused(true)" (clickOutside)="inputFocused(false)">
   <div class="chip-list">
-    @for (chip of chips(); track chip) {
-      <app-chip-input (chipClosed)="deleteChip(chip)">
+    @for (chip of chips(); track chip; let index = $index) {
+      <app-chip-input (chipClosed)="deleteChip(index)">
         {{ chip.label }}
       </app-chip-input>
     }

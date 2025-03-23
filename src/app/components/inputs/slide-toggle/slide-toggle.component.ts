@@ -11,7 +11,6 @@ export class SlideToggleComponent {
   checked = model<boolean>(false);
 
   toggle() {
-    console.log(this.checked());
     this.checked.update(checked => !checked);
   }
 }

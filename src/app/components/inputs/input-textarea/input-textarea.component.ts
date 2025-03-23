@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class InputTextareaComponent {
   value = model.required<string>();
-  placeholder = input.required<string>();
+  placeholder = input<string>();
   height = input<string>('inherit');
   resizable = input<boolean>(true);
 

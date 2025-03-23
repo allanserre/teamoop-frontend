@@ -5,6 +5,7 @@
   height: 40px;
   display: flex;
   flex-direction: row;
+
   .segmented-button {
     display: flex;
     width: 90px;
@@ -12,7 +13,6 @@
     justify-content: center;
     align-items: center;
     border: $border-width solid $outline-color;
-
     stroke: $text-color;
     stroke-dasharray: 25;
     stroke-linecap: round;
@@ -20,7 +20,6 @@
     fill: none;
     stroke-width: 0.1em;
     border-radius: 6px;
-
     transition:
       background 0.2s,
       stroke-dashoffset 0.4s;
@@ -32,15 +31,19 @@
     &:has(+ .segmented-button) {
       border-right: none;
     }
+
     &.first {
       border-radius: 9999px 0 0 9999px;
     }
+
     &.last {
       border-radius: 0 9999px 9999px 0;
     }
+
     &.middle {
       border-radius: 0;
     }
+
     .check-icon {
       width: 18px;
       height: 18px;

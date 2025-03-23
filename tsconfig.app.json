@@ -10,7 +10,11 @@
       "@models/*": ["src/app/models/*"],
       "@services/*": ["src/app/services/*"],
       "@components/*": ["src/app/components/*"],
-      "@environments/*": ["src/environments/*"]
+      "@environments/*": ["src/environments/*"],
+      "@directives/*": ["src/app/directives/*"],
+      "@guards/*": ["src/app/guards/*"],
+      "@helpers/*": ["src/app/helpers/*"],
+      "@pipes/*": ["src/app/pipes/*"]
     }
   },
   "files": ["src/main.ts"],

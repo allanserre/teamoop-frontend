@@ -2,6 +2,7 @@
 @use 'theme' as theme;
 @import 'font';
 @import 'variables';
+@import '@angular/cdk/overlay-prebuilt.css';
 @include mat.core;
 
 // Define the theme object.

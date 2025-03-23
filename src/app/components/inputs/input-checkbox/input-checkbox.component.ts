@@ -11,4 +11,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class InputCheckboxComponent {
   checked = model.required<boolean>();
   disabled = input(false);
+
+  toggleCheck() {
+    if (!this.disabled()) {
+      this.checked.update(value => !value);
+    }
+  }
 }

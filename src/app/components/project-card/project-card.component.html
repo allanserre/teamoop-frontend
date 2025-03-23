@@ -10,7 +10,7 @@
     </div>
     <div class="card-chips">
       @for (chip of project().tags; track chip) {
-        <app-chip-tag data-cy="project-tags" [color]="chip.color">{{ chip.name }}</app-chip-tag>
+        <app-chip-tag data-cy="project-tags" [color]="chip.color!">{{ chip.name }}</app-chip-tag>
       }
     </div>
   </div>

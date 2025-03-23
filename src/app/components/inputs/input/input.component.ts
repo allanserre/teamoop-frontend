@@ -1,4 +1,4 @@
-import { Component, effect, ElementRef, input, model, output, viewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, input, model, output, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
-export class InputComponent {
+export class InputComponent implements AfterViewInit {
   value = model<string>();
   placeholder = input<string>();
   focus = input<boolean>(false);
@@ -16,11 +16,13 @@ export class InputComponent {
   validate = output<void>();
   unfocused = output<void>();
 
-  constructor() {
-    effect(() => {
-      if (this.focus()) {
-        this.input().nativeElement.focus();
-      }
-    });
+  ngAfterViewInit() {
+    if (this.focus()) {
+      this.input().nativeElement.focus();
+    }
+  }
+
+  triggerFocus() {
+    this.input().nativeElement.focus();
   }
 }

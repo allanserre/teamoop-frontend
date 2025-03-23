@@ -1,8 +1,8 @@
-import { Component, effect, model, viewChild } from '@angular/core';
+import { Component, input, model, output, viewChild, ViewEncapsulation } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChipInputComponent, ChipInputProps } from '@components/chips/chip-input/chip-input.component';
 import { InputComponent } from '@components/inputs/input/input.component';
-import { ClickOutsideDirective } from '../../../directives/click-outside.directive';
+import { ClickOutsideDirective } from '@directives/click-outside.directive';
 
 @Component({
   selector: 'app-input-multi-select',
@@ -10,20 +10,25 @@ import { ClickOutsideDirective } from '../../../directives/click-outside.directi
   imports: [ReactiveFormsModule, ChipInputComponent, InputComponent, ClickOutsideDirective],
   templateUrl: './input-multi-select.component.html',
   styleUrl: './input-multi-select.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class InputMultiSelectComponent {
-  chips = model.required<ChipInputProps[]>();
+  chips = input.required<ChipInputProps[]>();
   showInput = model<boolean>(false);
   inputValue = model<string>('');
+  canValidate = input<boolean>(true);
+  chipDeleted = output<number>();
+  chipAdded = output<string>();
 
-  deleteChip(deletedChip: ChipInputProps) {
-    this.chips.update(chips => {
-      const filteredChips = chips.filter(chip => chip !== deletedChip);
-      return [...filteredChips];
-    });
+  textInput = viewChild(InputComponent);
+
+  deleteChip(deletedChipIndex: number) {
+    this.chipDeleted.emit(deletedChipIndex);
   }
 
   inputFocused(focused: boolean) {
+    if (!this.tryInputValidation()) return;
+
     this.showInput.set(focused);
     if (!focused) {
       this.validateChoice();
@@ -31,6 +36,8 @@ export class InputMultiSelectComponent {
   }
 
   validateChoice() {
+    if (!this.tryInputValidation()) return;
+
     const value = this.inputValue();
     if (value.length !== 0) {
       this.addChips(value);
@@ -38,12 +45,15 @@ export class InputMultiSelectComponent {
     }
   }
 
-  private addChips(text: string, icon?: string): void {
-    this.chips.update(chips => {
-      chips.push({
-        label: text,
-      });
-      return [...chips];
-    });
+  tryInputValidation(): boolean {
+    const canValidate = this.canValidate();
+    if (!canValidate) {
+      this.textInput()?.triggerFocus();
+    }
+    return canValidate;
+  }
+
+  private addChips(text: string): void {
+    this.chipAdded.emit(text);
   }
 }

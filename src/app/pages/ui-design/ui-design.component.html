@@ -54,15 +54,14 @@
 
     <!--  <app-segmented-button [buttons]="segmentedButton"></app-segmented-button>-->
 
-    <app-input-description value="sdljskd" placeholder="Renseigner la description de votre projet"></app-input-description>
+    <app-input-description [value]="markdownText" placeholder="Renseigner la description de votre projet"></app-input-description>
 
     <div style="max-width: 600px">
-      <app-input-multi-select [(chips)]="chipsMulti"></app-input-multi-select>
+      <app-input-multi-select [chips]="chipsMulti"></app-input-multi-select>
     </div>
 
-
     <div style="max-width: 600px">
-      <app-project-tags-selection></app-project-tags-selection>
+      <app-project-tags-selection [tags]="tags"></app-project-tags-selection>
     </div>
   </div>
 </ng-template>

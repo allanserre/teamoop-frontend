@@ -6,7 +6,13 @@ import { NotificationsComponent } from './pages/notifications/notifications.comp
 import { DefaultPageWrapperComponent } from '@components/layout/default-page-wrapper/default-page-wrapper.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'ui-design', component: UiDesignComponent, canActivate: [DevModeGuard] },
-  { path: '', component: DefaultPageWrapperComponent, children: [{ path: 'notifications', component: NotificationsComponent }] },
+  {
+    path: '',
+    component: DefaultPageWrapperComponent,
+    children: [
+      { path: '', component: HomeComponent },
+      { path: 'notifications', component: NotificationsComponent },
+    ],
+  },
 ];

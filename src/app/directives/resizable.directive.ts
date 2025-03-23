@@ -32,6 +32,8 @@ export class ResizableDirective {
     this.renderer.setStyle(this.resizer, 'cursor', 'se-resize');
     this.renderer.setStyle(this.resizer, 'z-index', '10');
 
+    // Possibilité de récupérer la handle durant les tests
+    this.renderer.setAttribute(this.resizer, 'data-cy', 'drag-handle');
     this.renderer.setStyle(this.el.nativeElement, 'position', 'relative');
     this.renderer.appendChild(this.el.nativeElement, this.resizer);
 

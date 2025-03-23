@@ -21,9 +21,7 @@ import { SlideToggleComponent } from '@components/inputs/slide-toggle/slide-togg
 import { SegmentedButtonComponent, SegmentedButtonProps } from '@components/buttons/segmented-button/segmented-button.component';
 import { InputDescriptionComponent } from '@components/inputs/input-description/input-description.component';
 import { InputMultiSelectComponent } from '@components/inputs/input-multi-select/input-multi-select.component';
-import {
-  ProjectTagsSelectionComponent
-} from '@components/inputs/project-tags-selection/project-tags-selection.component';
+import { ProjectTagsSelectionComponent } from '@components/inputs/project-tags-selection/project-tags-selection.component';
 
 interface MenuItem {
   libelle: string;
@@ -152,4 +150,29 @@ export class UiDesignComponent {
     active: true,
     tags: this.tags,
   });
+
+  markdownText =
+    "Lors de l'ajout d'un nouveau composant vous pouvez l'ajouter à la liste de ceux existant parmis l'un des catégories à disposition ou\n" +
+    '```typescript\n' +
+    'private MENU_ITEMS: MenuItem[] = [\n' +
+    '{\n' +
+    "libelle: 'Chips',\n" +
+    "code: 'chips',\n" +
+    '},\n' +
+    '...\n' +
+    '{\n' +
+    "libelle: 'Layout',\n" +
+    "code: 'layout',\n" +
+    '},\n' +
+    '];\n' +
+    '```\n' +
+    'Puis on ajout la case et le template associé pour faciliter la lisibilité :\n' +
+    '```angular17html\n' +
+    "@case ('layout') {\n" +
+    '<div *ngTemplateOutlet="layout"></div>\n' +
+    '}\n' +
+    '<ng-template #layout>\n' +
+    '<app-top-bar></app-top-bar>\n' +
+    '</ng-template>\n' +
+    '```';
 }

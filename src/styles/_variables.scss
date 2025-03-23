@@ -25,6 +25,7 @@ $border-radius-small: 8px;
 
 $outline-color: rgba(theme.get-color(primary, 950), 0.25);
 $hover-color: rgba(theme.get-color(primary, 950), 0.15);
+$hover-color-light: rgba(theme.get-color(primary, 950), 0.08);
 $text-color: theme.get-color(dark, 900);
 $background-surface-color: theme.get-color(primary, 50);
 $background-secondary-surface-color: theme.get-color(dark, 500);
@@ -60,6 +61,10 @@ $input-background-color: $background-surface-color;
 $input-outline-color: theme.get-color(gray, 300);
 $input-border-radius: 4px;
 $placeholder-text-color: theme.get-color(primary, 300);
+
+// OVERLAY
+
+$overlay-shadow-level-1: 0px 15px 50px 0px rgb(27 32 50 / 10%);
 
 // ====================================================== //
 

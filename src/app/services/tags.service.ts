@@ -13,9 +13,9 @@ export class TagsService {
 
   searchTags(queryText: string, mock = true): Observable<Tags[]> {
     if (environment.mock && mock) {
-      return of(TagsMock).pipe(delay(1000));
+      return of(TagsMock).pipe(delay(2000));
     } else {
-      return this.http.get<Tags[]>(`${environment.apiUrl}/api/tags`, { params: { search: queryText } })
+      return this.http.get<Tags[]>(`${environment.apiUrl}/api/tags`, { params: { search: queryText } });
     }
   }
 }
