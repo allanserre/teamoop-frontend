@@ -2,17 +2,20 @@ import { defineConfig } from 'cypress';
 import * as fs from 'node:fs';
 
 export default defineConfig({
-  reporter: 'mochawesome',
+  reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
     overwrite: false,
     embeddedScreenshots: true,
     inlineAssets: true,
+    html : false,
+    json: true,
     saveAllAttempts: false,
   },
   e2e: {
     baseUrl: 'http://localhost:4200',
     setupNodeEvents(on) {
+      require('cypress-mochawesome-reporter/plugin')(on)
       on('after:spec', (spec: Cypress.Spec, results: CypressCommandLine.RunResult) => {
         if (results && results.video) {
           // Do we have failures for any retry attempts?
@@ -29,6 +32,9 @@ export default defineConfig({
   viewportHeight: 1080,
   viewportWidth: 1920,
   component: {
+    setupNodeEvents(on) {
+      require('cypress-mochawesome-reporter/plugin')(on)
+    },
     devServer: {
       framework: 'angular',
       bundler: 'webpack',

@@ -55,7 +55,7 @@ describe('InputDescriptionComponent', () => {
       .then(height => {
         cy.get('[data-cy="markdown-container"]')
           .invoke('height')
-          .should('equal', height - borderRadiusHeight);
+          .should('equal', height! - borderRadiusHeight);
       });
 
     cypressDrag('drag-handle', 188, 188);
@@ -64,7 +64,7 @@ describe('InputDescriptionComponent', () => {
       .then(height => {
         cy.get('[data-cy="markdown-container"]')
           .invoke('height')
-          .should('equal', height - borderRadiusHeight);
+          .should('equal', height! - borderRadiusHeight);
       });
   });
 });

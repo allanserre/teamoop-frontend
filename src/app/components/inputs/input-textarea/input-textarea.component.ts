@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './input-textarea.component.scss',
 })
 export class InputTextareaComponent {
-  value = model.required<string>();
+  value = model<string>('');
   placeholder = input<string>();
   height = input<string>('inherit');
   resizable = input<boolean>(true);
