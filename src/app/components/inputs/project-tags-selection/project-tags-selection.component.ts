@@ -1,4 +1,14 @@
-import { Component, computed, ElementRef, HostListener, inject, model, signal, viewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  ElementRef,
+  HostListener,
+  inject,
+  model,
+  signal,
+  viewChild,
+} from '@angular/core';
 import { InputMultiSelectComponent } from '@components/inputs/input-multi-select/input-multi-select.component';
 import { Overlay, OverlayConfig, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { Tags } from '@models/tags.model';
@@ -15,6 +25,7 @@ import { CdkPortal } from '@angular/cdk/portal';
   imports: [InputMultiSelectComponent, OverlayModule, AsyncPipe, CdkPortal],
   templateUrl: './project-tags-selection.component.html',
   styleUrl: './project-tags-selection.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectTagsSelectionComponent {
   inputMultiSelect = viewChild('multiSelect', { read: ElementRef });

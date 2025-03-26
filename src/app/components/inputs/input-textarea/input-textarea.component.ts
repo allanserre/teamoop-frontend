@@ -1,4 +1,4 @@
-import { Component, computed, input, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
   templateUrl: './input-textarea.component.html',
   styleUrl: './input-textarea.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputTextareaComponent {
   value = model<string>('');

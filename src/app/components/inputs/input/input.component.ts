@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, input, model, output, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, input, model, output, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputComponent implements AfterViewInit {
   value = model<string>();

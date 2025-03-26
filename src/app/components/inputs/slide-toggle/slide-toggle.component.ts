@@ -1,4 +1,4 @@
-import { Component, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, model } from '@angular/core';
 
 @Component({
   selector: 'app-slide-toggle',
@@ -6,6 +6,7 @@ import { Component, model } from '@angular/core';
   imports: [],
   templateUrl: './slide-toggle.component.html',
   styleUrl: './slide-toggle.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SlideToggleComponent {
   checked = model<boolean>(false);

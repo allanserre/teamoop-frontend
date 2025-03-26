@@ -1,4 +1,4 @@
-import { Component, input, model, output, viewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model, output, viewChild, ViewEncapsulation } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChipInputComponent, ChipInputProps } from '@components/chips/chip-input/chip-input.component';
 import { InputComponent } from '@components/inputs/input/input.component';
@@ -11,6 +11,7 @@ import { ClickOutsideDirective } from '@directives/click-outside.directive';
   templateUrl: './input-multi-select.component.html',
   styleUrl: './input-multi-select.component.scss',
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputMultiSelectComponent {
   chips = input.required<ChipInputProps[]>();

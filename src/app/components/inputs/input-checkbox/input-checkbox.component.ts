@@ -1,4 +1,4 @@
-import { Component, input, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [ReactiveFormsModule, FormsModule],
   templateUrl: './input-checkbox.component.html',
   styleUrl: './input-checkbox.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputCheckboxComponent {
   checked = model.required<boolean>();
