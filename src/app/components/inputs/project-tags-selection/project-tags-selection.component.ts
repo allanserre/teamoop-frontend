@@ -91,6 +91,7 @@ export class ProjectTagsSelectionComponent {
   }
 
   addTag(chipLabel: string) {
+    this.hide();
     this.tags.update(tags => {
       tags.push({
         name: chipLabel,

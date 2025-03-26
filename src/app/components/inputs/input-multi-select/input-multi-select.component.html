@@ -6,7 +6,7 @@
       </app-chip-input>
     }
     @if (showInput()) {
-      <app-input (unfocused)="validateChoice()" [(value)]="inputValue" (validate)="validateChoice()" [focus]="true"> </app-input>
+      <app-input (unfocused)="validateChoice()" [(value)]="inputValue" (validate)="validateChoice(true)" [focus]="true"> </app-input>
     }
   </div>
 </div>

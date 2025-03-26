@@ -1,7 +1,6 @@
 import { InputTextareaComponent } from './input-textarea.component';
 
 describe('InputDescriptionComponent', () => {
-
   it('should mount', () => {
     cy.mount(InputTextareaComponent);
   });

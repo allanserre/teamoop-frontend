@@ -2,7 +2,6 @@ import { InputMultiSelectComponent } from './input-multi-select.component';
 import { createOutputSpy } from 'cypress/angular';
 
 describe('InputMultiSelectComponent', () => {
-
   const chips = [{ label: 'Chip 1' }, { label: 'Chip 2' }];
 
   it('should mount', () => {

@@ -21,7 +21,6 @@ describe('ProjectTagsSelectionComponent', () => {
   });
 
   it('should display initial tags as chips', () => {
-
     cy.mount(ProjectTagsSelectionComponent, {
       componentProperties: { tags: initialTags },
       providers: [{ provide: TagsService, useValue: tagsServiceMock }],
@@ -33,10 +32,7 @@ describe('ProjectTagsSelectionComponent', () => {
   });
 
   it('should show dropdown on input focus with matching tags', () => {
-    tagsServiceMock.searchTags = cy.stub().returns(of([
-      { name: 'Vue' },
-      { name: 'React' },
-    ]));
+    tagsServiceMock.searchTags = cy.stub().returns(of([{ name: 'Vue' }, { name: 'React' }]));
 
     cy.mount(ProjectTagsSelectionComponent, {
       componentProperties: { tags: initialTags },

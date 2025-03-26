@@ -35,8 +35,8 @@ export class InputMultiSelectComponent {
     }
   }
 
-  validateChoice() {
-    if (!this.tryInputValidation()) return;
+  validateChoice(pressEnter: boolean = false) {
+    if (!this.tryInputValidation() && !pressEnter) return;
 
     const value = this.inputValue();
     if (value.length !== 0) {

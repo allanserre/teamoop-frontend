@@ -11,6 +11,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+
+    &.column {
+      flex-direction: column;
+    }
   }
 
   h2 {
