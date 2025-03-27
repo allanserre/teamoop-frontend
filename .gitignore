@@ -43,6 +43,7 @@ Thumbs.db
 
 # Cypress
 /cypress/downloads
+/cypress/reports
 /mochawesome-report
 /cypress/videos
 /cypress/screenshots

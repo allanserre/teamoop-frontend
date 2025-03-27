@@ -1,0 +1,24 @@
+@use 'theme' as theme;
+@import 'variables';
+
+.input-container {
+  position: relative;
+  display: flex;
+}
+
+.input {
+  border-radius: $input-border-radius;
+  border: none;
+  padding: 6px 12px;
+  outline: $border-width solid $input-outline-color;
+  background-color: $input-background-color;
+  color: $text-color;
+
+  &:focus {
+    outline: $border-width solid theme.get-color(primary, 800);
+  }
+
+  &::placeholder {
+    color: $placeholder-text-color;
+  }
+}

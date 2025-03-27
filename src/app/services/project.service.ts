@@ -9,23 +9,18 @@ import { MostRecentProjectsMock } from '@services/mock/project.mock';
   providedIn: 'root',
 })
 export class ProjectService {
-  private apiUrl = environment.apiUrl;
-  private mockEnv = environment.mock;
-
   private http: HttpClient = inject(HttpClient);
 
   private projectsSubject: BehaviorSubject<Project[]> = new BehaviorSubject<Project[]>([]);
   public projects$ = this.projectsSubject.asObservable();
 
   fetchMostRecentProjects(mock = true) {
-    if (this.mockEnv && mock) {
+    if (environment.mock && mock) {
       this.projectsSubject.next(MostRecentProjectsMock);
     } else {
-      this.http.get<Project[]>(`${this.apiUrl}/api/projects`).subscribe(projects => {
+      this.http.get<Project[]>(`${environment.apiUrl}/api/projects`).subscribe(projects => {
         this.projectsSubject.next(projects);
       });
     }
   }
-
-  constructor() {}
 }

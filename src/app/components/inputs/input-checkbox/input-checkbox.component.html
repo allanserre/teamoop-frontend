@@ -1,0 +1,10 @@
+<div class="checkbox-wrapper" [class.disabled]="disabled()" (click)="toggleCheck()">
+  <input data-cy="checkbox-input" type="checkbox" [checked]="checked()" [disabled]="disabled()" />
+  <span data-cy="checkbox" class="checkbox-box">
+    @if (checked()) {
+      <svg data-cy="svg-icon" class="check-icon" viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    }
+  </span>
+</div>

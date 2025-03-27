@@ -1,0 +1,25 @@
+<div>
+  <app-input-multi-select
+    #multiSelect
+    [chips]="chips()"
+    [canValidate]="!isOpen()"
+    (chipAdded)="addTag($event)"
+    (chipDeleted)="removeTag($event)"
+    [inputValue]="searchQuery()"
+    (inputValueChange)="searchQuery.set($event)">
+  </app-input-multi-select>
+</div>
+
+<ng-template cdkPortal #templatePortalContent="cdkPortal">
+  <div class="item-list-container">
+    @if (isLoading()) {
+      <div class="tags-loading-indicator"></div>
+    } @else {
+      <ul>
+        @for (tag of matchedTags(); track tag) {
+          <li class="item-container" (click)="multiSelectAddTag(tag.name)">{{ tag.name }}</li>
+        }
+      </ul>
+    }
+  </div>
+</ng-template>

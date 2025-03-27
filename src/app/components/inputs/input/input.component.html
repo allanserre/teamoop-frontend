@@ -1,0 +1,11 @@
+<div class="input-container">
+  <input
+    (focusout)="this.unfocused.emit()"
+    (keydown.enter)="validate.emit()"
+    #input
+    data-cy="input"
+    class="input"
+    type="text"
+    [(ngModel)]="value"
+    [placeholder]="placeholder() || ''" />
+</div>

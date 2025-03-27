@@ -1,0 +1,12 @@
+<div class="input-multi-select-container" (click)="inputFocused(true)" (clickOutside)="inputFocused(false)">
+  <div class="chip-list">
+    @for (chip of chips(); track chip; let index = $index) {
+      <app-chip-input (chipClosed)="deleteChip(index)">
+        {{ chip.label }}
+      </app-chip-input>
+    }
+    @if (showInput()) {
+      <app-input (unfocused)="validateChoice()" [(value)]="inputValue" (validate)="validateChoice(true)" [focus]="true"> </app-input>
+    }
+  </div>
+</div>

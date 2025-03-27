@@ -23,6 +23,9 @@
       @case ('buttons') {
         <div *ngTemplateOutlet="buttons"></div>
       }
+      @case ('inputs') {
+        <div *ngTemplateOutlet="inputs"></div>
+      }
       @case ('cards') {
         <div *ngTemplateOutlet="cards"></div>
       }
@@ -39,7 +42,9 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<ng-template #sandbox> Sandbox </ng-template>
+<ng-template #sandbox>
+  <div class="sandbox-container"></div>
+</ng-template>
 
 <ng-template #cards>
   <h2>Project Card</h2>
@@ -85,4 +90,28 @@
 
 <ng-template #layout>
   <app-top-bar></app-top-bar>
+</ng-template>
+
+<ng-template #inputs>
+  <div class="flex-container column">
+    <app-input value="sksdsd" placeholder="sdjd">TEST</app-input>
+    <app-input-textarea height="100px" value="sdsddsd" placeholder="COntenu"></app-input-textarea>
+    <app-input-checkbox [checked]="true"></app-input-checkbox>
+    <app-input-checkbox [checked]="false"></app-input-checkbox>
+    <app-input-checkbox [checked]="true" [disabled]="true"> </app-input-checkbox>
+    <app-input-checkbox [checked]="false" [disabled]="true"> </app-input-checkbox>
+    <app-slide-toggle [checked]="true"></app-slide-toggle>
+
+    <!--  <app-segmented-button [buttons]="segmentedButton"></app-segmented-button>-->
+
+    <app-input-description [value]="markdownText" placeholder="Renseigner la description de votre projet"></app-input-description>
+
+    <div style="max-width: 600px">
+      <app-input-multi-select [chips]="chipsMulti"></app-input-multi-select>
+    </div>
+
+    <div style="max-width: 600px">
+      <app-project-tags-selection [tags]="tags"></app-project-tags-selection>
+    </div>
+  </div>
 </ng-template>

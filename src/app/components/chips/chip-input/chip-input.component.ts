@@ -1,6 +1,11 @@
 import { Component, output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
+export interface ChipInputProps {
+  label: string;
+  icon?: string;
+}
+
 @Component({
   selector: 'app-chip-input',
   standalone: true,

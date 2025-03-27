@@ -2,7 +2,7 @@
   <span data-cy="chip-text">
     <ng-content>#filter</ng-content>
   </span>
-  <button data-cy="close" class="icon-backdrop" (click)="chipClosed.emit()">
+  <button data-cy="close" class="icon-backdrop" (click)="$event.stopPropagation(); chipClosed.emit()">
     <mat-icon>close</mat-icon>
   </button>
 </div>

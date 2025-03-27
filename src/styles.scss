@@ -2,6 +2,7 @@
 @use 'theme' as theme;
 @import 'font';
 @import 'variables';
+@import '@angular/cdk/overlay-prebuilt.css';
 @include mat.core;
 
 // Define the theme object.
@@ -45,6 +46,7 @@ h2 {
 
 html,
 body {
+  color: $text-color;
   height: 100%;
 }
 
