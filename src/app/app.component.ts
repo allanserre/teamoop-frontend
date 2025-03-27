@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from '@components/layout/footer/footer.component';
+import { FooterComponent } from './layouts/footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
-import { TopBarComponent } from '@components/layout/top-bar/top-bar.component';
+import { TopBarComponent } from './layouts/top-bar/top-bar.component';
 
 @Component({
   selector: 'app-root',

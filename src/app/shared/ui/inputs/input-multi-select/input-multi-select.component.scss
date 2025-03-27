@@ -1,0 +1,27 @@
+@use '../../../../../styles/theme' as theme;
+@import '../../../../../styles/variables';
+
+.input-multi-select-container {
+  cursor: text;
+  min-height: 30px;
+  border-radius: $input-border-radius;
+  border: none;
+  display: flex;
+  min-width: 80px;
+  width: 100%;
+  padding: 6px 6px;
+  outline: $border-width solid $input-outline-color;
+  background-color: $input-background-color;
+  color: $text-color;
+
+  .chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .input-container {
+      height: 30px;
+      margin-top: 1px;
+    }
+  }
+}

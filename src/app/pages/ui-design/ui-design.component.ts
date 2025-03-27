@@ -1,27 +1,27 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListItem, MatNavList } from '@angular/material/list';
-import { ClassicButtonComponent } from '@components/classic-button/classic-button.component';
-import { ChipInputComponent, ChipInputProps } from '@components/chips/chip-input/chip-input.component';
-import { ProjectCardComponent } from '@components/project-card/project-card.component';
-import { Tags } from '@models/tags.model';
+import { ClassicButtonComponent } from '../../shared/ui/buttons/classic-button/classic-button.component';
+import { ChipInputComponent, ChipInputProps } from '../../shared/ui/chips/chip-input/chip-input.component';
+import { ProjectCardComponent } from '../../core/components/project-card/project-card.component';
+import { Tag } from '../../core/models/tag.model';
 import { NgTemplateOutlet } from '@angular/common';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ChipMenuComponent } from '@components/chips/chip-menu/chip-menu.component';
-import { ChipTagComponent } from '@components/chips/chip-tag/chip-tag.component';
-import { TopBarComponent } from '@components/layout/top-bar/top-bar.component';
-import { InputComponent } from '@components/inputs/input/input.component';
-import { InputTextareaComponent } from '@components/inputs/input-textarea/input-textarea.component';
-import { InputCheckboxComponent } from '@components/inputs/input-checkbox/input-checkbox.component';
-import { SlideToggleComponent } from '@components/inputs/slide-toggle/slide-toggle.component';
-import { SegmentedButtonComponent, SegmentedButtonProps } from '@components/buttons/segmented-button/segmented-button.component';
-import { InputDescriptionComponent } from '@components/inputs/input-description/input-description.component';
-import { InputMultiSelectComponent } from '@components/inputs/input-multi-select/input-multi-select.component';
-import { ProjectTagsSelectionComponent } from '@components/inputs/project-tags-selection/project-tags-selection.component';
+import { ChipMenuComponent } from '../../shared/ui/chips/chip-menu/chip-menu.component';
+import { ChipTagComponent } from '../../shared/ui/chips/chip-tag/chip-tag.component';
+import { TopBarComponent } from '../../layouts/top-bar/top-bar.component';
+import { InputComponent } from '../../shared/ui/inputs/input/input.component';
+import { InputTextareaComponent } from '../../shared/ui/inputs/input-textarea/input-textarea.component';
+import { InputCheckboxComponent } from '../../shared/ui/inputs/input-checkbox/input-checkbox.component';
+import { SlideToggleComponent } from '../../shared/ui/inputs/slide-toggle/slide-toggle.component';
+import { SegmentedButtonComponent, SegmentedButtonProps } from '../../shared/ui/buttons/segmented-button/segmented-button.component';
+import { InputDescriptionComponent } from '../../shared/ui/inputs/input-description/input-description.component';
+import { InputMultiSelectComponent } from '../../shared/ui/inputs/input-multi-select/input-multi-select.component';
+import { ProjectTagsSelectionComponent } from '../../shared/ui/inputs/project-tags-selection/project-tags-selection.component';
 
 interface MenuItem {
   libelle: string;
@@ -135,7 +135,7 @@ export class UiDesignComponent {
   //       Project Card          //
   // =========================== //
 
-  tags: Tags[] = [
+  tags: Tag[] = [
     { name: '#tag1', color: 'green' },
     { name: '#tag2', color: 'red' },
     { name: '#tag3', color: 'blue' },

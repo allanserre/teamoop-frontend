@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { SvgFileComponent } from '@components/svg-file/svg-file.component';
-import { ProjectListComponent } from '@components/project-list/project-list.component';
-import { ProjectService } from '@services/project.service';
+import { SvgFileComponent } from '../../shared/ui/svg-file/svg-file.component';
+import { ProjectListComponent } from '../../core/components/project-list/project-list.component';
+import { ProjectService } from '../../core/services/project.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({

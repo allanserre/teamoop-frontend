@@ -3,7 +3,7 @@
   "font-weight": "400",
   "outline-color": "rgba(8, 16, 17, 0.25)",
   "hover-color": "rgba(8, 16, 17, 0.15)",
-  "text-color": "rgb(22, 37, 33)",
+  "text-color": "rgb(19, 32, 29)",
   "background-surface-color": "rgb(238, 246, 247)",
   "chip-menu-hover-color": "rgb(205, 225, 228)",
   "chip-menu-active-color": "rgb(151, 199, 206)",
@@ -25,5 +25,14 @@
   "border-width": "1px",
   "border-radius-small": "8px",
   "background-notification-color": "rgb(220, 236, 239)",
-  "background-notification-unread-color": "rgb(186, 217, 222)"
+  "background-notification-unread-color": "rgb(186, 217, 222)",
+  "font-weight-extrabold": "900",
+  "hover-color-light": "rgba(8, 16, 17, 0.08)",
+  "background-secondary-surface-color": "rgb(22, 37, 33)",
+  "text-color-on-secondary-surface": "rgb(238, 245, 246)",
+  "input-background-color": "rgb(238, 246, 247)",
+  "input-outline-color": "rgb(156, 195, 201)",
+  "input-border-radius": "4px",
+  "placeholder-text-color": "rgb(151, 199, 206)",
+  "overlay-shadow-level-1": "0px 15px 50px 0px rgba(27, 32, 50, 0.1)"
 }

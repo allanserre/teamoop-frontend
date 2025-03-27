@@ -1,0 +1,74 @@
+@import '../../../../../styles/variables';
+
+.item-list-container {
+  position: relative;
+  border-radius: $border-radius-small;
+  padding: 12px;
+  width: 100%;
+  min-height: 300px;
+  flex-direction: column;
+  display: flex;
+  background-color: white;
+  box-shadow: $overlay-shadow-level-1;
+  border: $border-width solid $outline-color;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+      padding: 12px 8px;
+      list-style: none;
+      border-radius: $border-radius-small;
+
+      &:hover {
+        background-color: $hover-color-light;
+      }
+    }
+  }
+
+  .item-container {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .item-divider {
+    display: block;
+    margin: 0;
+    border-top: $border-width solid $outline-color;
+  }
+}
+
+.tags-loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side, #000 90%, #0000) 0 / calc(100% / 3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation:
+    l1 0.7s steps(4) infinite,
+    fade 0.7s ease-in-out infinite;
+}
+
+@keyframes l1 {
+  to {
+    clip-path: inset(0 -34% 0 0);
+  }
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
