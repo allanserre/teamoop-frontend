@@ -1,5 +1,5 @@
 import { NotificationsComponent } from './notifications.component';
-import { NotificationService } from '@services/notifications.service';
+import { NotificationService } from '../../core/services/notification.service';
 import { provideHttpClient } from '@angular/common/http';
 
 describe('NotificationsComponent', () => {

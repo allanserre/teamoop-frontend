@@ -96,4 +96,13 @@ $overlay-shadow-level-1: 0px 15px 50px 0px rgb(27 32 50 / 10%);
   --border-radius-small: #{$border-radius-small};
   --background-notification-color: #{$background-notification-color};
   --background-notification-unread-color: #{$background-notification-unread-color};
+  --font-weight-extrabold: #{$font-weight-extrabold};
+  --hover-color-light: #{$hover-color-light};
+  --background-secondary-surface-color: #{$background-secondary-surface-color};
+  --text-color-on-secondary-surface: #{$text-color-on-secondary-surface};
+  --input-background-color: #{$input-background-color};
+  --input-outline-color: #{$input-outline-color};
+  --input-border-radius: #{$input-border-radius};
+  --placeholder-text-color: #{$placeholder-text-color};
+  --overlay-shadow-level-1: #{$overlay-shadow-level-1};
 }

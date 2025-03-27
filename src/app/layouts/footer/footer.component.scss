@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.footer-container {
+  width: 100%;
+  padding: 24px 108px;
+  bottom: 0;
+  left: 0;
+  background-color: $background-secondary-surface-color;
+  color: $text-color-on-secondary-surface;
+  display: flex;
+  justify-content: space-between;
+
+  .left-side {
+    p {
+      margin-top: 16px;
+    }
+  }
+
+  .right-side .links-container {
+    font-size: 12px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+}
